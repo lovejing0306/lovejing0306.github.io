@@ -6,7 +6,7 @@ description: git clone 一半失败
 keywords: Git
 ---
 
-git clone 一半失败
+解决 git clone 到一半时提示失败的问题
 
 ---
 
