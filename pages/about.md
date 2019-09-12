@@ -2,17 +2,17 @@
 layout: page
 title: About
 description: LittleBei's Personal Blog
-keywords: lihuimintu, tu, 图 
+keywords: LittleBei, Blog
 comments: true
 menu: 关于
 permalink: /about/
-subtitle:   <h3>Download My CV</h3>
+<!-- subtitle:   <h3>Download My CV</h3>
             <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/CV_Wendy_e.pdf" target="_blanks">
                 <span class="flag-icon flag-icon-gb"></span> English
             </a>
             <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/CV_Wendy_e.pdf" target="_blanks">
                 <span class="flag-icon flag-icon-cn"></span> 中文
-            </a>
+            </a> -->
                             
 ---
 
@@ -22,7 +22,7 @@ subtitle:   <h3>Download My CV</h3>
 
 记录知识，坚信努力改变人生。
 
-## 联系
+## Contact
 
 {% for website in site.data.social %}
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
