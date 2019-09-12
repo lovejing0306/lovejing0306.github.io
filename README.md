@@ -68,7 +68,9 @@ pages/about.md 文件内容对应网站的「关于」页面，里面的内容�
 
 ## 致谢
 [DONGChuan](http://dongchuan.github.io)
+
 [Zhuang Ma](http://mazhuang.org/)
+
 [图](https://lihuimintu.github.io/)
 
 
