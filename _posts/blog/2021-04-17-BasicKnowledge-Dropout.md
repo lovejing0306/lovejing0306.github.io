@@ -13,9 +13,16 @@ keywords: BasicKnowledge
 ## 简介
 &emsp;&emsp;$Dropout$ 由 $Hintion$ 提出，是一种用于防止过拟合和提供有效近似联结指数级不同神经网络结构的方法。如下图所示，$dropout$ 中的 $drop$ 指随机“丢弃”网络层中的某些节点，对一个网络使用 $dropout$ 相当于从网络中采样一个“稀疏”的网络，这个“稀疏”的网络包含所有节点（不管是存活还是被丢弃）。
 
-<center><img src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Normalization/Dropout/dropout1.png?raw=true" width="480" hegiht="" /></center>
-<center><br>dropout</br></center>
-<br></br>
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Normalization/Dropout/dropout1.png?raw=true"
+    width="480" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">dropout</div>
+</center>
 
 ## 原理
 &emsp;&emsp;$Dropout$ 可以看做是模型平均，所谓模型平均，是把来自不同模型的估计或者预测通过一定的权重平均起来，在一些文献中也称为模型组合，它一般包括组合估计和组合预测。
@@ -28,8 +35,7 @@ keywords: BasicKnowledge
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Normalization/Dropout/dropout2.png?raw=true"
-    width=320 height=
-    >
+    width="320" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -45,8 +51,7 @@ keywords: BasicKnowledge
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Normalization/Dropout/dropout3.png?raw=true"
-    width=768 height=
-    >
+    width="768" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
