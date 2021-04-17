@@ -25,6 +25,10 @@ keywords: BasicKnowledge
     padding: 2px;">dropout</div>
 </center>
 
+<center>
+<img src="https://github.com/lovejing0306/TensorFlow/blob/master/project/object_detection/yolo_v2/yolo2_data/detection.jpg?raw=true" width=256 height=256  border=4  alt="图片名称" />
+</center>
+
 ## 原理
 &emsp;&emsp;$Dropout$ 可以看做是模型平均，所谓模型平均，是把来自不同模型的估计或者预测通过一定的权重平均起来，在一些文献中也称为模型组合，它一般包括组合估计和组合预测。
 
