@@ -17,7 +17,7 @@ keywords: BasicKnowledge
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Normalization/Dropout/dropout1.png?raw=true"
     width=480 height=
-    >
+    />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
