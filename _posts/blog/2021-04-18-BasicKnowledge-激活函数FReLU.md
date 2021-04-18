@@ -49,9 +49,11 @@ $$
 
 ### PReLU
 作为 $ReLU$ 的高级变体，PReLU的形式为：
+
 $$
 f(x) = max(x, px)   (p<1)
 $$
+
 其中 $p$ 是一个可学习的参数，初始化为 $0.25$。
 
 ### FReLU
@@ -65,6 +67,7 @@ $$
 	T\left( x_{c,i,j} \right) =x_{c,i,j}^{w}\cdot p_{c}^{w}\\
 \end{array}
 $$
+
 其中，$x_{c,i,j}$ 为非线性激活 $f(\cdot )$ 在第 $c$ 个通道上的二维空间位置 $(i,j)$ 的输入像素；函数 $T(\cdot )$ 表示漏斗条件；$x_{c,i,j}^{w}$ 代表一个 $k_{h}\times k_{w}$ 的参数池窗口，中心点为 $x_{c,i,j}$； $p_{c}^{w}$ 表示为该窗口在同一通道中共享的权重。
 
 ### Pixel-wise modeling capacity
