@@ -28,7 +28,7 @@ permalink: /about/
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
 {% endfor %}
 
-* Email：<a href="mailto:lovejing0306@gmail.com?subject=请填写邮件主题&body=请填写邮件内容"><p>lovejing0306@gmail.com</p></a>
+* Email：<a href="mailto:lovejing0306@gmail.com">lovejing0306@gmail.com</a>
 
 ## Skill Keywords
 
