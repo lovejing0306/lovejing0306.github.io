@@ -18,7 +18,7 @@ permalink: /about/
 
 个人本职工作是一名计算机视觉算法工程师。
 
-通过记录博客的方式记录自己成长。记录自己的改变。
+通过记录博客的方式记录自己成长，记录自己的改变。
 
 记录知识，坚信努力改变人生。
 
@@ -27,6 +27,8 @@ permalink: /about/
 {% for website in site.data.social %}
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
 {% endfor %}
+
+* Email：<a href="mailto:lovejing0306@gmail.com?subject=请填写邮件主题&body=请填写邮件内容"><p>lovejing0306@gmail.com</p></a>
 
 ## Skill Keywords
 
