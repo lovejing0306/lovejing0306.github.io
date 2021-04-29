@@ -19,7 +19,7 @@ $$
 
 式中 $X$，$y$ 为训练样本和相应标签，$w$ 为权重系数向量；$J\left( \right)$为目标函数，$\Omega\left( w \right)$ 即为惩罚项，可理解为模型“规模”的某种度量；参数$\lambda$制正则化强弱。
 
-&emsp;&emsp;不同的$\Omega$ 函数对权重$w$的最优解有不同的偏好，因而会产生不同的正则化效果。最常用的$\lambda$函数有两种，即 ${l}_ 1$ 范数和 $l_2$ 范数，相应称之为$l_1$正则化和$l_2$正则化。
+&emsp;&emsp;不同的$\Omega$ 函数对权重$w$的最优解有不同的偏好，因而会产生不同的正则化效果。最常用的$\lambda$函数有两种，即 ${l}_ 1$ 范数和 $l_ 2$ 范数，相应称之为$l_ 1$正则化和$l_ 2$正则化。
 
 $$
 \begin{aligned} \Omega \left(w \right) &={\left\| w \right\|  }_ 1=\sum_{ i }{\left| w_ i\right|}  \\ \Omega \left(w \right) &=\left\| w \right\|_2^{ 2 }=\sum _ { i }{ { w }_ { i }^{ 2 } } \end{aligned}
