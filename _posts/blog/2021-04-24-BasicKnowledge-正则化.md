@@ -52,7 +52,7 @@ $$
 \begin{matrix} \min _{ w }{ J\left( w;X,y \right) \quad s.t.{ \left\| w \right\|  }_{ 1 }\le C }  \\ \min _{ w }{ J\left( w;X,y \right) \quad s.t.{ \left\| w \right\|  }_{ 2 }\le C }  \end{matrix}
 $$
 
-使用 ${ l }_ { 2 }$ 范数时，为方便后续处理，可对 $\left| \left| w \right|\right|_ {2}$ 进行平方，此时只需调整 $C$ 的取值即可。
+使用 ${l}_ {2}$ 范数时，为方便后续处理，可对 $\left\| w \right\|_ {2}$ 进行平方，此时只需调整 $C$ 的取值即可。
 
 &emsp;&emsp;利用拉格朗日算子法，可将上述带约束条件的最优化问题转换为不带约束项的优化问题，构造拉格朗日函数：
 
