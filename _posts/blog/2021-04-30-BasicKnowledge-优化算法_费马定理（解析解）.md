@@ -121,8 +121,9 @@ $$
 $$
 
 与拉格朗日乘数法类似，构造广义拉格朗日函数：
+
 $$
-L\left( x,\lambda ,\mu  \right) =f\left( x \right) +\sum _ { i=1 }^{ m }{ { \lambda  }_ { i }{ g }_ { i }\left( x \right)  } +\sum _ { i=1 }^{ p }{ { \mu  }_{ i }{ h }_{ i }\left( x \right)  } 
+L\left( x,\lambda ,\mu  \right) =f\left( x \right) +\sum _ { i=1 }^{ m }{ { \lambda  }_ { i }{ g }_ { i }\left( x \right)  } +\sum _ { i=1 }^{ p }{ { \mu  }_{ i }{ h }_{ i }\left( x \right)} 
 $$
 
 $\lambda _ i$必须满足$\lambda _ i\ge 0$的约束。原问题为：
