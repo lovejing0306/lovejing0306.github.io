@@ -155,7 +155,7 @@ $$
 
 如果直接使用梯度下降，每次自变量迭代的计算开销为 $O\left( n \right)$，它随着 $n$ 线性增长。因此，当训练数据样本数很大时，梯度下降每次迭代的计算开销很高。
 
-&emsp;&emsp;随机梯度下降（$stochastic \ gradient \ descent$，简称 $SGD$ ）减少了每次迭代的计算开销。在随机梯度下降的每次迭代中，我们随机均匀采样得到一个样本索引 $i\in \left\{ 1,...,n \right\}$，并计算梯度 $\nabla { f } _ { i }\left( x \right)$ 来迭代 $x$：
+&emsp;&emsp;随机梯度下降（$stochastic \ gradient \ descent$，简称 $SGD$ ）减少了每次迭代的计算开销。在随机梯度下降的每次迭代中，我们随机均匀采样得到一个样本索引 $i \in { 1,...,n }$ ，并计算梯度 $\nabla { f } _ { i }\left( x \right)$ 来迭代 $x$：
 
 $$
 x\leftarrow x-\eta \nabla { f }_ { i }\left( x \right) 
