@@ -11,7 +11,7 @@ keywords: BasicKnowledge
 ---
 
 
-# 数值优化
+## 数值优化
 &emsp;&emsp;解析解方法在理论推导、某些可以得到方程组的求根公式的情况（如线性函数，正态分布的最大似然估计）中可以使用，但对绝大多数函数来说，梯度等于$0$的方程组是没法直接解出来的（如方程里面含有指数函数、对数函数之类的超越函数）。对于这种无法直接求解的方程组，只能采用近似的算法来求解，即数值优化算法。
 
 &emsp;&emsp;数值优化算法一般都利用了目标函数的导数信息，如一阶导数和二阶导数。如果采用一阶导数，则称为一阶优化算法。如果使用了二阶导数，则称为二阶优化算法。
@@ -28,8 +28,8 @@ $$
 { x }_ { k+1 }=h\left( { x }_ { k } \right) 
 $$
 
-# 一阶优化算法
-## 一维梯度下降
+## 一阶优化算法
+### 一维梯度下降
 &emsp;&emsp;以简单的一维梯度下降为例来解释梯度下降算法可能降低目标函数值的原因。假设连续可导的函数 $f:\Re \rightarrow \Re$ 的输入和输出都是标量。给定绝对值足够小的数 $\epsilon$ ，其中 $\epsilon=\Delta x$ 为变化量，根据泰勒展开公式，得到以下的近似:
 
 $$
@@ -78,11 +78,11 @@ $$
 
 &emsp;&emsp;更多解释可参见 $Neural \ Network \ and \ Deep \ Learning$ 一书
 
-## 缺点
+### 缺点
 梯度下降法只能保证找到梯度为$0$的点，不能保证找到极小值点。迭代终止的判定依据是梯度值充分接近于$0$，或者达到最大指定迭代次数。
 
 
-## 学习率
+### 学习率
 &emsp;&emsp;上述梯度下降算法中的正数 $\eta$ 通常叫做学习率。这是一个超参数，需要人工设定。如果使用过小的学习率，会导致$x$ 更新缓慢从而需要更多的迭代才能得到较好的解。下面展示了使用学习率 $\eta =0.05$ 时自变量 $x$ 的迭代轨迹。可见，迭代 10 次后，当学习率过小时，最终$x$的值依然与最优解存在较大偏差。
 
 <center>
@@ -111,7 +111,7 @@ $$
     padding: 2px;">learning rate</div>
 </center>
 
-## 多维梯度下降
+### 多维梯度下降
 &emsp;&emsp;接下来考虑一种更广义的情况：目标函数的输入为向量，输出为标量。假设目标函数 $f:{ \Re  }^{ d }\rightarrow \Re$ 的输入是一个$d$维向量 $x={ \left[ { x } _ { 1 },{ x } _ { 2 },...,{ x } _ { d } \right]  }^{ T }$。目标函数 $f(x)$ 有关$x$的梯度是一个由 $d$ 个偏导数组成的向量：
 
 $$
@@ -140,7 +140,7 @@ $$
 
 其中 $\eta$（取正数）称作学习率。
 
-## 随机梯度下降
+### 随机梯度下降
 &emsp;&emsp;在深度学习里，目标函数通常是训练数据集中有关各个样本的损失函数的平均。设 ${ f } _ { i }\left( x \right)$ 是有关索引为 $i$ 的训练数据样本的损失函数，$n$ 是训练数据样本数，$x$ 是模型的参数向量，那么目标函数定义为:
 
 $$
@@ -169,7 +169,7 @@ $$
 
 这意味着，平均来说，随机梯度是对梯度的一个良好的估计。
 
-## 小批量随机梯度下降
+### 小批量随机梯度下降
 &emsp;&emsp;在每一次迭代中，梯度下降使用整个训练数据集来计算梯度，因此它有时也被称为批量梯度下降（$batch \ gradient \ descent$）。而随机梯度下降在每次迭代中只随机采样一个样本来计算梯度。还可以在每轮迭代中随机均匀采样多个样本来组成一个小批量，然后使用这个小批量来计算梯度。
 
 &emsp;&emsp;设目标函数 $f:{ \Re  }^{ d }\rightarrow \Re$ 。在迭代开始前的时间步设为 $0$。该时间步的自变量记为 ${ x } _ { 0 }\in { \Re  }^{ d }$，通常由随机初始化得到。在接下来的每一个时间步$t>0$中，小批量随机梯度下降随机均匀采样一个由训练数据样本索引所组成的小批量$ { B  } _ { t } $。可以通过重复采样（$sampling \ with \ replacement$）或者不重复采样（$sampling \ without \ replacement$）得到一个小批量中的各个样本。前者允许同一个小批量中出现重复的样本，后者则不允许如此，且更常见。对于这两者间的任一种方式，都可以使用:
@@ -189,7 +189,7 @@ $$
 
 &emsp;&emsp;小批量随机梯度下降中每次迭代的计算开销为 $O\left( B  \right)$ 。当批量大小为 $1$ 时，该算法即为随机梯度下降；当批量大小等于训练数据样本数时，该算法即为梯度下降。当批量较小时，每次迭代中使用的样本少，这会导致并行处理和内存使用效率变低。这使得在计算同样数目样本的情况下比使用更大批量时所花时间更多。当批量较大时，每个小批量梯度里可能含有更多的冗余信息。为了得到较好的解，批量较大时比批量较小时可能需要计算更多数目的样本，例如增大迭代周期数。
 
-### mini-batch 大小
+#### mini-batch 大小
 1. 不能太大。更大的batch会使得训练更快，但是可能导致泛化能力下降。
     1. 训练更快是因为
         1. 更大的 $batch \ size$ 只需要更少的迭代步数就可以使得训练误差收敛。因为 $batch \ size$ 越大，则小批量样本来估计总体梯度越可靠，则每次参数更新沿着总体梯度的负方向的概率越大。另外，训练误差收敛速度快，并不意味着模型的泛化性能强。
@@ -431,7 +431,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/sgd _ optimization _ on _ contours.gif?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/sgd_optimization_on_contours.gif?raw=true"
     width="320" height=""
     >
     <br>
@@ -450,7 +450,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/sgd _ optimization _ on _ saddle.gif?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/sgd_optimization_on_saddle.gif?raw=true"
     width="320" height=""
     >
     <br>
