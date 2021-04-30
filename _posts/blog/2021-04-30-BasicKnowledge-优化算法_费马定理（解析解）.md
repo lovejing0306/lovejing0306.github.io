@@ -45,7 +45,7 @@ $$
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/saddle _ point1.jpg?raw=true"
-    width=320 height=
+    width="320" height=""
     >
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -63,7 +63,7 @@ $$
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/saddle _ point2.jpg?raw=true"
-    width=320 height=
+    width="320" height=""
     >
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
