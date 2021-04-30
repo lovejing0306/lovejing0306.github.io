@@ -22,7 +22,7 @@ $$
 \lim _ { k\rightarrow +\infty  }{ \nabla f\left( { x }_ { k } \right)  } =0
 $$
 
-这些规则一般会利用一阶导数信息即梯度；或者二阶导数信息即$Hessian$矩阵。这样迭代法的核心是得到这样的由上一个点确定下一个点的迭代公式：
+这些规则一般会利用一阶导数信息即梯度；或者二阶导数信息即 $Hessian$ 矩阵。这样迭代法的核心是得到这样的由上一个点确定下一个点的迭代公式：
 
 $$
 { x }_ { k+1 }=h\left( { x }_ { k } \right) 
@@ -64,7 +64,7 @@ $$
 \Delta f\approx -\eta \nabla f\cdot \nabla f=-\eta { \left\| \nabla f \right\|  }^{ 2 }
 $$
 
-由于 ${ \left\| \nabla f \right\|  }^{ 2 }\ge 0$，从而保证了 $\Delta f\le 0$，也就是说，如果按照 $\epsilon =-\eta \nabla f$ 的方式去改变$x$，那么 $f\left( x \right)$ 会一直减小，不会增加。
+由于 ${ \|\| \nabla f \|\|  }^{ 2 }\ge 0$，从而保证了 $\Delta f\le 0$，也就是说，如果按照 $\epsilon =-\eta \nabla f$ 的方式去改变$x$，那么 $f\left( x \right)$ 会一直减小，不会增加。
 
 &emsp;&emsp;因此可以通过 $\epsilon =-\eta \nabla f$:
 
@@ -97,7 +97,7 @@ $$
     padding: 2px;">learning rate</div>
 </center>
 
-如果使用过大的学习率，$\left\| \eta f^{ \prime  }\left( x \right)  \right\|$ 可能会过大从而使前面提到的一阶泰勒展开公式不再成立：这时我们无法保证迭代 $x$ 会降低 $f(x)$ 的值。举个例子，当我们设学习率 $\eta =1.1$ 时，可以看到$x$不断越过（$overshoot$）最优解 $x-0$ 并逐渐发散。
+如果使用过大的学习率，$\|\| \eta f^{ \prime  }\left( x \right)  \|\|$ 可能会过大从而使前面提到的一阶泰勒展开公式不再成立：这时我们无法保证迭代 $x$ 会降低 $f(x)$ 的值。举个例子，当我们设学习率 $\eta =1.1$ 时，可以看到$x$不断越过（$overshoot$）最优解 $x-0$ 并逐渐发散。
 
 <center>
     <img 
@@ -118,7 +118,7 @@ $$
 { \nabla  }_ { x }f\left( x \right) ={ \left[ \frac { \partial f\left( x \right)  }{ \partial { x }_ { 1 } } ,\frac { \partial f\left( x \right)  }{ \partial { x }_ { 2 } } ,...,\frac { \partial f\left( x \right)  }{ \partial { x }_ { d } }  \right]  }^{ T }
 $$
 
-为表示简洁，用 ${ \nabla  }f\left( x \right)$ 代替 ${ \nabla  } _ { x }f\left( x \right)$。梯度中每个偏导数元素 $\frac { \partial f\left( x \right)  }{ \partial { x } _ { i } }$ 代表着 $f$ 在 $x$ 有关输入 ${ x } _ { i }$ 的变化率。为了测量 $f$ 沿着单位向量 $\mu$（即 $\left\| \mu  \right\| =1$）方向上的变化率，在多元微积分中，我们定义 $f$ 在 $x$ 上沿着 $\mu$ 方向的方向导数为:
+为表示简洁，用 ${ \nabla  }f\left( x \right)$ 代替 ${ \nabla  } _ { x }f\left( x \right)$。梯度中每个偏导数元素 $\frac { \partial f\left( x \right)  }{ \partial { x } _ { i } }$ 代表着 $f$ 在 $x$ 有关输入 ${ x } _ { i }$ 的变化率。为了测量 $f$ 沿着单位向量 $\mu$（即 $\|\| \mu  \|\| =1$）方向上的变化率，在多元微积分中，我们定义 $f$ 在 $x$ 上沿着 $\mu$ 方向的方向导数为:
 
 $$
 { D } _ { u }f\left( x \right) =\lim _ { h\rightarrow 0 }{ \frac { f\left( x+hu \right) -f\left( x \right) }{ h }  } 
@@ -132,7 +132,7 @@ $$
 
 方向导数 ${ D } _ { u }f\left( x \right)$ 给出了 $f$ 在 $x$ 上沿着所有可能方向的变化率。为了最小化 $f$，我们希望找到$f$能被降低最快的方向。因此，我们可以通过单位向量 $\mu$来最小化方向导数 ${ D } _ { u }f\left( x \right)$。
 
-由于 ${ D } _ { u }f\left( x \right) =\left\| \nabla f\left( x \right)  \right\| \cdot \left\| \mu  \right\| \cdot \cos { \theta  }$， 其中 $\theta$ 为梯度 $\nabla f\left( x \right)$ 和单位向量 $\mu$ 之间的夹角，当 $\theta =\pi$ 时，$\cos { \theta  }$ 取得最小值 $-1$。因此，当 $\mu$ 在梯度方向 $\nabla f\left( x \right)$ 的相反方向时，方向导数 ${ D } _ { u }f\left( x \right)$ 被最小化。所以，我们可能通过梯度下降算法来不断降低目标函数 $f$ 的值：
+由于 ${ D } _ { u }f\left( x \right) =\|\| \nabla f\left( x \right)  \|\| \cdot \|\| \mu  \|\| \cdot \cos { \theta  }$， 其中 $\theta$ 为梯度 $\nabla f\left( x \right)$ 和单位向量 $\mu$ 之间的夹角，当 $\theta =\pi$ 时，$\cos { \theta  }$ 取得最小值 $-1$。因此，当 $\mu$ 在梯度方向 $\nabla f\left( x \right)$ 的相反方向时，方向导数 ${ D } _ { u }f\left( x \right)$ 被最小化。所以，我们可能通过梯度下降算法来不断降低目标函数 $f$ 的值：
 
 $$
 x\leftarrow x-\eta \nabla f\left( x \right)
