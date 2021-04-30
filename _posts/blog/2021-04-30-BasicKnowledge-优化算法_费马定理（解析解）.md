@@ -44,7 +44,7 @@ $$
 我们可以找出该函数的鞍点位置。
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/saddle _ point1.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/saddle_point1.jpg?raw=true"
     width="320" height=""
     >
     <br>
@@ -62,7 +62,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/saddle _ point2.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Optimization/saddle_point2.jpg?raw=true"
     width="320" height=""
     >
     <br>
