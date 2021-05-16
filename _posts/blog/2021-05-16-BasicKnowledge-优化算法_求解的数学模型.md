@@ -1,0 +1,94 @@
+---
+layout: post
+title: 优化算法之求解的数学模型
+categories: [BasicKnowledge]
+description: 优化算法之求解的数学模型
+keywords: BasicKnowledge
+---
+
+
+深度学习基础知识点优化算法之求解的数学模型
+---
+
+## 求解的数学模型
+&emsp;&emsp;几乎所有的机器学习算法最后都归结为求一个目标函数的极值，即最优化问题。
+
+## 监督学习
+&emsp;&emsp;对于监督学习，我们要找到一个最佳的映射函数$f(x)$，使得对训练样本的损失函数最小化（最小化经验风险或结构风险）：
+
+$$
+\min _ { w }{ \frac { 1 }{ N }  } \sum _ { i=1 }^{ N }{ L(w,{ x }_{ i },{ y }_{ i }) } +\lambda { \left\| w \right\|  }_ { 2 }^{ 2 }
+$$
+
+其中，$N$ 为训练样本数，$L$ 是对单个样本的损失函数，$w$是求解的模型参数，是映射函数的参数，${ x }  _  { i }$为样本的特征向量，${ y }  _  { i }$为样本的标签值。
+
+&emsp;&emsp;或是找到一个最优的概率密度函数$p(x)$，使得对训练样本的对数似然函数极大化（最大似然估计）：
+
+$$
+\max { \sum _ { i=1 }^{ l }{ \ln { p({ x }_ { i };\theta ) }  }  } 
+$$
+
+其中，$\theta$是要求解的模型参数，是概率密度函数的参数。
+
+## 无监督学习
+&emsp;&emsp;对于无监督学习，以聚类算法为例，算法是使每个类的样本到其类中心的距离之和最小化：
+
+$$
+\max _ { S }{ \sum _ { i=1 }^{ k }{ \sum _{ x\in { S }_{ i } }^{  }{ { \left\| x-{ \mu  }_ { i } \right\|  }^{ 2 } }  }  } 
+$$
+
+其中，$k$为聚类中心的个数，$x$为样本向量，${ \mu  }  _  { i }$为类中心向量，${ S }  _  { i }$为第$i$个类的样本集合。
+
+## 强化学习
+&emsp;&emsp;对于强化学习，我们要找到一个最优的策略，即状态$s$到动作$a$的映射函数（确定性策略，对于非确定性策略，是执行每个动作的概率）：
+
+$$
+a=\pi (s)
+$$
+
+使得任意给定一个状态，执行这个策略函数所确定的动作a之后，得到的累计回报最大化：
+
+$$
+\max _ { \pi  }{ { V }_ { \pi  }(s) } 
+$$
+
+这里使用的是状态价值函数。
+
+## 总结
+&emsp;&emsp;总体来看，机器学习的核心目标是给出一个模型（一般是映射函数），然后定义对这个模型好坏的评价函数（目标函数），求解目标函数的极大值或者极小值，以确定模型的参数，从而得到我们想要的模型。在这三个关键步骤中，前两个是机器学习要研究的问题，建立数学模型。第三个问题是纯数学问题，即最优化方法。
+
+
+## 打赏
+
+如果文章对您有帮助，欢迎丢香蕉抛硬币。
+
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/Reward/wechat.JPG?raw=true"
+    width="300" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">微信</div>
+</center>
+
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/Reward/zhifubao.JPG?raw=true"
+    width="300" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">支付宝</div>
+</center>
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
