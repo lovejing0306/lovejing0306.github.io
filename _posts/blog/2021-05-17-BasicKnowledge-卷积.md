@@ -1,4 +1,16 @@
-# 卷积(Convolution)
+---
+layout: post
+title: 卷积
+categories: [BasicKnowledge]
+description: 卷积
+keywords: BasicKnowledge
+---
+
+
+深度学习基础知识点卷积
+---
+
+
 ## 目的
    * 是从输入图像中提取特征
 
