@@ -39,7 +39,7 @@ keywords: BasicKnowledge
 ### no padding
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Convolution/no _ padding.gif?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Convolution/no_padding.gif?raw=true"
     width="320" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -92,7 +92,7 @@ keywords: BasicKnowledge
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Convolution/merge _ channel.gif?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Convolution/merge_channel.gif?raw=true"
     width="512" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -142,7 +142,7 @@ keywords: BasicKnowledge
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Convolution/atrous _ conv.gif?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Skill/Convolution/atrous_conv.gif?raw=true"
     width="320" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
