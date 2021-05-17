@@ -19,20 +19,24 @@ keywords: BasicKnowledge
      * 该特性可大大减少训练过程使用的参数量
 
 ## 卷积层输出尺寸计算公式
-* 输入张量的尺寸${ W }  _  { 1 }\times { H }  _  { 1 }\times { D }  _  { 1 }$
-* 4个超参数
-  * 滤波器的数量$K$
-  * 滤波器的空间尺寸$F$
-  * 步长$S$
-  * 零填充数量$P$
-* 输出张量的尺寸${ W }  _  { 2 }\times { H }  _  { 2 }\times { D }  _  { 2 }$
-  $$
-  \begin{aligned}
-  { W }_ { 2 } &={ ({ W }_{ 1 }-F+2P) }/{ S }+1 \\ 
-  { H }_ { 2 } &={ ({ H }_{ 1 }-F+2P) }/{ S }+1 \\ 
-  { D }_ { 2 } &=K 
-  \end{aligned}
-  $$
+
+输入张量的尺寸 ${ W }  _  { 1 }\times { H }  _  { 1 }\times { D }  _  { 1 }$
+
+4个超参数
+* 滤波器的数量$K$
+* 滤波器的空间尺寸$F$
+* 步长$S$
+* 零填充数量$P$
+
+输出张量的尺寸 ${ W }  _  { 2 }\times { H }  _  { 2 }\times { D }  _  { 2 }$
+
+$$
+\begin{aligned}
+{ W }_ { 2 } &={ ({ W }_{ 1 }-F+2P) }/{ S }+1 \\ 
+{ H }_ { 2 } &={ ({ H }_{ 1 }-F+2P) }/{ S }+1 \\ 
+{ D }_ { 2 } &=K 
+\end{aligned}
+$$
 
 ## 卷积操作演示
 
@@ -135,7 +139,7 @@ keywords: BasicKnowledge
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">atrous _ conv1</div>
+    padding: 2px;">atrous_conv1</div>
 </center>
 
 ## 卷积过程
@@ -148,7 +152,7 @@ keywords: BasicKnowledge
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">atrous _ conv2</div>
+    padding: 2px;">atrous_conv2</div>
 </center>
 
 ## 优点
