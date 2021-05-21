@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 卷积之GroupedConvolutions
+title: 卷积之Grouped Convolutions
 categories: [BasicKnowledge]
-description: 卷积之GroupedConvolutions
+description: 卷积之Grouped Convolutions
 keywords: BasicKnowledge
 ---
 
 
-深度学习基础知识点卷积
+深度学习基础知识点卷积Grouped Convolutions
 ---
 
 

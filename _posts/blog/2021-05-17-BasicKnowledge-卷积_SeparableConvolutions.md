@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 卷积之SeparableConvolutions
+title: 卷积之Separable Convolutions
 categories: [BasicKnowledge]
-description: 卷积之SeparableConvolutions
+description: 卷积之Separable Convolutions
 keywords: BasicKnowledge
 ---
 
 
-深度学习基础知识点卷积之SeparableConvolutions
+深度学习基础知识点卷积之Separable Convolutions
 ---
 
 
