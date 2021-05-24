@@ -53,7 +53,7 @@ $$W=np.random.randn(node \_   in,\quad node \_   out)/np.sqrt(node \_   in)$$
 &emsp;&emsp;为了解决 $Xavier$ 初始化的问题，何恺明大神提出了一种针对 $ReLU$ 的初始化方法，一般称作 “$He \ initialization$”。其思想是在 $ReLU$ 网络中，假定每一层有一半的神经元被激活，另一半为 $0$，所以，要保持方差不变，只需要在 $Xavier$ 的基础上再除以 $2$。
 #### 初始化方式
 
-`W=np.random.randn(node\  _   in,\quad node\  _   out)/np.sqrt(node\  _   in/2)`
+$$W=np.random.randn(node \_   in,\quad node \_   out)/np.sqrt(node \_   in/2)$$
 
 #### 优点
 1. 完美解决 $Xavier$ 初始化在 $ReLU$ 上遇到的问题。
