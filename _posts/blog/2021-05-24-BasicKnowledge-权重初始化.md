@@ -39,7 +39,7 @@ keywords: BasicKnowledge
 &emsp;&emsp;$Xavier$ 初始化是为了解决随机初始化的问题，其思想是尽可能的让输入和输出服从相同的分布，能够避免后面层的激活函数的输出值 趋向于 $0$。
 
 #### 初始化方式
-`W=np.random.randn(node\  _   in,\quad node\  _   out)/np.sqrt(node\  _   in)`
+$$W=np.random.randn(node \_   in,\quad node \_   out)/np.sqrt(node \_   in)$$
 
 除以输入节点数的平方根就是为了让分布保持一致
 
