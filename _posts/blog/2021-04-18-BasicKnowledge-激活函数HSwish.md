@@ -47,38 +47,3 @@ $Hard \ Swish$ 可以看作 $Swish$ 激活函数的低精度版本，$Hard \ Swi
 ## 参考
 [Searching for MobileNetV3](https://arxiv.org/abs/1905.02244)
 
-
-## 打赏
-
-如果文章对您有帮助，欢迎丢香蕉抛硬币。
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/wechat.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">微信</div>
-</center>
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/zhifubao.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">支付宝</div>
-</center>
-
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
-</script>

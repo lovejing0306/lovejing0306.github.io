@@ -27,35 +27,3 @@ keywords: BasicKnowledge
 </center>
 
 先使用 $1 \times 1 \ Convolution$ 来约束通道个数，降低计算量，然后每个分支都是用 $3 \times 3$ 卷积，最终使用 $concat$ 的方式融合特征。
-
-## 打赏
-
-如果文章对您有帮助，欢迎丢香蕉抛硬币。
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/wechat.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">微信</div>
-</center>
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/zhifubao.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">支付宝</div>
-</center>
-
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>

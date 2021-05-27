@@ -56,39 +56,3 @@ $$
 
 ## 总结
 &emsp;&emsp;总体来看，机器学习的核心目标是给出一个模型（一般是映射函数），然后定义对这个模型好坏的评价函数（目标函数），求解目标函数的极大值或者极小值，以确定模型的参数，从而得到我们想要的模型。在这三个关键步骤中，前两个是机器学习要研究的问题，建立数学模型。第三个问题是纯数学问题，即最优化方法。
-
-
-## 打赏
-
-如果文章对您有帮助，欢迎丢香蕉抛硬币。
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/wechat.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">微信</div>
-</center>
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/zhifubao.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">支付宝</div>
-</center>
-
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
-</script>

@@ -422,11 +422,3 @@ $$
 * $softmax$ 建模使用的分布是多项式分布，而 $logistic$ 则基于伯努利分布。
 * 多个 $logistic$ 回归通过叠加也同样可以实现多分类的效果，但是 $softmax$ 回归进行的多分类，类与类之间是互斥的，即一个输入只能被归为一类；多个 $logistic$ 回归进行多分类，输出的类别并不是互斥的，即"苹果"这个词语既属于"水果"类也属于"$3C$"类别。
 
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
-</script>

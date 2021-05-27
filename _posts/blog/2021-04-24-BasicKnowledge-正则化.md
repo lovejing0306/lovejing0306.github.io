@@ -69,8 +69,8 @@ $$
 可以看出，上式与 $\min_ { w }{ \tilde { J } (w;X,y) }$ 等价。
 
 &emsp;&emsp;故此，我们得到对 ${ l }_ { 1 }$ 、 ${ l }_ { 2 }$ 正则化的第一种理解：
-* ${ l }_ { 1 }$ 正则化等价于在原优化目标函数中增加约束条件 ${ \|\| w \|\|  }_ { 1 }<C$ 
-* ${ l }_ { 2 }$ 正则化等价于在原优化目标函数中增加约束条件 ${ \|\| w \|\|  }_ { 2 }^{ 2 }<C$
+* ${ l }_ { 1 }$ 正则化等价于在原优化目标函数中增加约束条件 ${ \|\| w \|\|  }_ { 1 } \< C$ 
+* ${ l }_ { 2 }$ 正则化等价于在原优化目标函数中增加约束条件 ${ \|\| w \|\|  }_ { 2 }^{ 2 } \< C$
 
 ## L1和L2正则化的直观理解
 ### L1正则化和特征选择
@@ -135,38 +135,3 @@ $$
 ## 作用
 * ${ l }_ { 1 }$ 正则化可以产生稀疏权值矩阵，即产生一个稀疏模型，可以用于特征选择，一定程度上，$L_ 1$ 也可以防止过拟合
 * ${ l }_ { 2 }$ 正则化可以防止模型过拟合（$overfitting$）
-
-## 打赏
-
-如果文章对您有帮助，欢迎丢香蕉抛硬币。
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/wechat.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">微信</div>
-</center>
-
-<center>
-    <img 
-    src="https://github.com/lovejing0306/Images/blob/master/Reward/zhifubao.JPG?raw=true"
-    width="300" height="" />
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">支付宝</div>
-</center>
-
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
-</script>

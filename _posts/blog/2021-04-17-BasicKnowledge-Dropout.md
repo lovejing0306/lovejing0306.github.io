@@ -66,11 +66,3 @@ keywords: BasicKnowledge
 * 降低神经元之间复杂的共适应关系
     * 神经网络（尤其是深度神经网络）在训练过程中，神经元之间会产生复杂的共适应关系，但是我们更希望的是神经元能够自己表达出数据中共同的本质特征。
     * 使用 $Dropout$ 后，两个神经元不一定每次都出现在同一个网络中，这样网络中的权值更新不再依赖于具有固定关系的神经元节点之间的共同作用，使得网络更加 $robust$。
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
-</script>
