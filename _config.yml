@@ -35,7 +35,8 @@ navs:
     href: /categories/
     label: Blog
    
-
+  - href: /archives/
+    label: Archive
 
   -
     href: /open-source/
