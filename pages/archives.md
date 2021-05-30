@@ -8,7 +8,10 @@ menu: 归档
 permalink: /archives/
 ---
 
+<!--
 <h2>Archives</h2>
+-->
+
 <ul>
   {% for post in site.posts %}
 
