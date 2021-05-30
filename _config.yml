@@ -1,7 +1,7 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
+baseurl: https://github.com/lovejing0306/lovejing0306.github.io
 #url: http://github.com/lihuimintu/lihuimintu.github.io
 date_format: "ordinal"
 title: 莫小苝
@@ -122,7 +122,7 @@ lazy_load_disqus : false
 #    Analytics     #
 # ---------------- #
 google:
-    analytics_id: UA-80669434-1
+    analytics_id: G-1XQ1ZH3KDF
 
 # ---------------- #
 #    Counter     #
