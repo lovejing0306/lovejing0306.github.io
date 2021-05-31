@@ -170,6 +170,11 @@ permalink: /archives/
       <div>
         {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
         {% capture this_month %}{{ post.date | date: "%b" }}{% endcapture %}
+        <div class="bullet pink"></div>
+        <div class="date">{{ this_day }}-{{ this_month }}</div>
+        <div class="desc">
+         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </div>
         <span class="date day">{{ this_day }}</span>
         <span class="date month small text-muted">{{ this_month }}</span>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
