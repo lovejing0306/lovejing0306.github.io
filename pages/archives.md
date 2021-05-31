@@ -69,7 +69,7 @@ permalink: /archives/
         border: 3px solid #EB8B6E;
     }
     .timeline-small-body .date {
-        width: 50%;
+        width: 23%;
         font-size: 0.75em;
         padding-top: 0.40rem;
         padding-right: 2rem;
