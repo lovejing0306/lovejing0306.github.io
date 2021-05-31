@@ -4,18 +4,6 @@
 
 
 
-//$scheme    : '{{ site.scheme | default: Muse }}';
-//$variablases : base $scheme custom;
-//$mixins    : base $scheme custom;
-//
-//
-//{% include _helper/config_map.html %}
-//$jekyll-config-map : {{ config_map }};
-//
-//@function jekyll-config($key) {
-//  @return map-get($jekyll-config-map, $key);
-//}
-
 // Variables Layer
 // --------------------------------------------------
 @import "_variables/base";
