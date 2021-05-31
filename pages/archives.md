@@ -89,69 +89,33 @@ permalink: /archives/
         color: #808080;
     }
     .lead {
-    font-size: 1.5rem;
-    position: relative;
-    left: 8px;
-    
-    /* archives */
-    --timeline-node-bg: rgb(150, 152, 156);
-    --timeline-color: rgb(63, 65, 68);
-    --timeline-year-dot-color: var(--timeline-color);
-
-    &::after { /* Year dot */
-      content: "";
-      display: block;
-      position: relative;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      top: -26px;
-      left: 63px;
-      border: 3px solid;
-      background-color: var(--timeline-year-dot-color);
-      border-color: var(--timeline-node-bg);
-      box-shadow: 0 0 2px 0 #c2c6cc;
-      z-index: 1;
-    }
-    .date {
-    white-space: nowrap;
-    display: inline-block;
-
-    &.month {
-      width: 1.4rem;
-      text-align: center;
-
-      ~ a::before {
-        /* A dot for Month and Day */
-        content: "";
-        display: inline-block;
+        font-size: 1.5rem;
         position: relative;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
-        float: left;
-        top: 1.35rem;
-        left: 69px;
-        background-color: var(--timeline-node-bg);
-        box-shadow: 0 0 3px 0 #c2c6cc;
-        z-index: 1;
-      }
-    }
+        left: 8px;
+    
+        /* archives */
+        --timeline-node-bg: rgb(150, 152, 156);
+        --timeline-color: rgb(63, 65, 68);
+        --timeline-year-dot-color: var(--timeline-color);
 
-    &.day {
-      font-size: 85%;
-      font-family: 'Lato', sans-serif;
-      text-align: center;
-      margin-right: -2px;
-      width: 1.2rem;
-      position: relative;
-      left: -.15rem;
+        &::after { /* Year dot */
+          content: "";
+          display: block;
+          position: relative;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          top: -26px;
+          left: 63px;
+          border: 3px solid;
+          background-color: var(--timeline-year-dot-color);
+          border-color: var(--timeline-node-bg);
+          box-shadow: 0 0 2px 0 #c2c6cc;
+          z-index: 1;
+        }
     }
-  }
 </style>
 
 <div id="archives" class="timeline-small-body">
