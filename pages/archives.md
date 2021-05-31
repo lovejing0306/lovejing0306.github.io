@@ -12,10 +12,6 @@ permalink: /archives/
 <h2>Archives</h2>
 -->
 
-<!--
-{% include archive.html %}
--->
-
 <section id="posts" class="posts-collapse" hidden>
   <span class="archive-move-on"></span>
 
