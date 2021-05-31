@@ -69,7 +69,7 @@ permalink: /archives/
         border: 3px solid #EB8B6E;
     }
     .timeline-small-body .date {
-        width: 63%;
+        width: 50%;
         font-size: 0.75em;
         padding-top: 0.40rem;
         padding-right: 2rem;
@@ -134,7 +134,7 @@ permalink: /archives/
       <div>
         {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
         {% capture this_month %}{{ post.date | date: "%b" }}{% endcapture %}
-        <span class="bullet pink"></span>
+        <div class="bullet pink"></div>
         <span class="date">{{ this_day }}-{{ this_month }}</span>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </div>
