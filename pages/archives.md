@@ -133,7 +133,11 @@ permalink: /archives/
     <li>
         <div class="bullet pink"></div>
         <div class="date">{{ post.date | date:"%m-%d" }}</div>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <div class="desc">
+        <h3>
+        <a class="posts-list-name" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        </div>
     </li>
   {% if forloop.last %}
   </ul>
@@ -148,7 +152,7 @@ permalink: /archives/
 {% endfor %}
 </div>
 
-<!--
+
 <div class="timeline-small">
     <div class="timeline-small-body">
         <ul>
@@ -187,4 +191,4 @@ permalink: /archives/
         </ul>
     </div>
 </div>
--->
+
