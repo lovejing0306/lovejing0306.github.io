@@ -30,7 +30,7 @@ permalink: /archives/
   {% if forloop.first %}
     {% assign last_day = "" %}
     {% assign last_month = "" %}
-  <span>{{this_year}}</span>
+  <h3>{{this_year}}</h3>
   <ul>
   {% endif %}
     <li>
@@ -42,7 +42,7 @@ permalink: /archives/
   {% elsif this_year != pre_year %}
   </ul>
 
-  <span>{{pre_year}}</span>
+  <h3>{{pre_year}}</h3>
   <ul>
     {% assign last_day = "" %}
     {% assign last_month = "" %}
