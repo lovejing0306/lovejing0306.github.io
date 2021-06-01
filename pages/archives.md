@@ -131,10 +131,10 @@ permalink: /archives/
   <ul>
   {% endif %}
     <li>
-        <div class="bullet pink">
-        </div>
-        <div class="date">{{ post.date | date:"%m-%d" }}</div>
+        <div class="bullet pink"></div>
+        <div class="date">XXXX年XX月XX日</div>
         <!--
+ {{ post.date | date:"%m-%d" }}
         <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
         -->
     </li>
