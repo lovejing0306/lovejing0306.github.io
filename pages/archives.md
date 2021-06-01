@@ -132,9 +132,11 @@ permalink: /archives/
   {% endif %}
     <li>
         <div class="bullet pink">
-            <span class="date">{{ post.date | date:"%m-%d" }}</span>
-            <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
         </div>
+        <div class="date">{{ post.date | date:"%m-%d" }}</div>
+        <!--
+        <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+        -->
     </li>
   {% if forloop.last %}
   </ul>
