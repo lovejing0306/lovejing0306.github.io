@@ -13,137 +13,36 @@ permalink: /archives/
 -->
 
 <style>
-    .timeline-small {
-        max-width: 350px;
-        max-height: 630px;
-        overflow: hidden;
-        margin: 30px auto 0;
-        box-shadow: 0 0 40px #a0a0a0;
-        font-family: 'Open Sans', sans-serif;
-    }
-    .timeline-small-body ul {
-        padding: 1em 0 0 2em;
-        margin: 0;
-        list-style: none;
-        position: relative;
-    }
-    .timeline-small-body ul::before {
-        content: ' ';
-        height: 100%;
-        width: 5px;
-        background-color: #d9d9d9;
-        position: absolute;
-        top: 0;
-        left: 2.4em;
-        z-index: -1;
-    }
-    .timeline-small-body li div {
-        display: inline-block;
-        margin: 1em 0;
-        vertical-align: top;
-    }
-    .timeline-small-body .bullet {
-        width: 1rem;
-        height: 1rem;
-        box-sizing: border-box;
-        border-radius: 50%;
-        background: #fff;
-        z-index: 1;
-        margin-right: 1rem;
-        margin-top: 7%;
-    }
-    .timeline-small-body .bullet.pink {
-        background-color: hotpink;
-        border: 3px solid #F93B69;
-    }
-    .timeline-small-body .bullet.green {
-        background-color: lightseagreen;
-        border: 3px solid #B0E8E2;
-    }
-    .timeline-small-body .bullet.blue {
-        background-color: aquamarine;
-        border: 3px solid cadetblue;
-    }
-    .timeline-small-body .bullet.orange {
-        background-color: salmon;
-        border: 3px solid #EB8B6E;
-    }
-    .timeline-small-body .date {
-        width: 23%;
-        font-size: 0.75em;
-        padding-top: 0.40rem;
-        padding-right: 2rem;
-    }
-    .timeline-small-body .desc {
-        width: 50%;
-    }
-    .timeline-small-body h3 {
-        font-size: 0.9em;
-        font-weight: 400;
-        margin: 0;
-    }
-    .timeline-small-body h4 {
-        margin: 0;
-        font-size: 0.7em;
-        font-weight: 400;
-        color: #808080;
-    }
-    .lead {
-        font-size: 1.5rem;
-        position: relative;
-        left: 8px;
-    
-        /* archives */
-        --timeline-node-bg: rgb(150, 152, 156);
-        --timeline-color: rgb(63, 65, 68);
-        --timeline-year-dot-color: var(--timeline-color);
-
-        &::after { /* Year dot */
-          content: "";
-          display: block;
-          position: relative;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          width: 12px;
-          height: 12px;
-          top: -26px;
-          left: 63px;
-          border: 3px solid;
-          background-color: var(--timeline-year-dot-color);
-          border-color: var(--timeline-node-bg);
-          box-shadow: 0 0 2px 0 #c2c6cc;
-          z-index: 1;
-        }
-    }
+.times {display:block;margin:15px 0;}/*首先，我们要创建一个容器class*/
+.times ul {margin-left:25px;border-left:2px solid #ddd;list-style-type:none;}/*利用ul标签的特性，设置外边框左移25px，左边边框是2px粗的实心线，颜色一般要浅一点*/
+.times ul li {width:100%;margin-left:-12px;line-height:20px;font-weight:narmal;}/*一般情况，通过li标签控制圆点回到时间线上，然后控制要出现的文字大小和是否粗体*/
+.times ul li b {width:8px;height:8px;background:#fff;border:2px solid #555;margin:5px;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;overflow:hidden;display:inline-block;float:left;}/*利用处理加粗以外没有其它特别属性b标签做时间轴的圆点。*/
+.times ul li span {padding-left:7px;font-size:12px;line-height:20px;color:#555;}/*设置span标签的属性，让它来做时间显示，加一点边距，使时间显示离时间线远一点*/
+.times ul li:hover b {border:2px solid #ff6600;}/*注意这一行，前面的li标签后面加了一个:hover伪属性，意思是鼠标移上来，激活后面的属性，这样可以设置鼠标移动到整个时间范围的时候，时间点和时间显示会变色*/
+.times ul li:hover span {color:#ff6600;}/*同上*/
+.times ul li p {padding-left:15px;font-size:14px;line-height:25px;}/*这里利用段落标签p做文字介绍*/
 </style>
 
-<div id="archives" class="timeline-small-body">
+<div id="archives" class="times">
 {% for post in site.posts %}
   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
   {% capture pre_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
   {% if forloop.first %}
     {% assign last_day = "" %}
     {% assign last_month = "" %}
-<!--
-  <span class="lead">{{this_year}}</span>
--->
+  <span>{{this_year}}</span>
   <ul>
   {% endif %}
     <li>
-        <div class="bullet pink"></div>
-        <div class="date">XXXX年XX月XX日</div>
-        <!--
- {{ post.date | date:"%m-%d" }}
-        <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-        -->
+        <b></b><span>{{ post.date | date:"%m-%d" }}</span>
+        <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
     </li>
   {% if forloop.last %}
   </ul>
   {% elsif this_year != pre_year %}
   </ul>
 
-  <span class="lead">{{pre_year}}</span>
+  <span>{{pre_year}}</span>
   <ul>
     {% assign last_day = "" %}
     {% assign last_month = "" %}
