@@ -125,9 +125,9 @@ permalink: /archives/
   {% if forloop.first %}
     {% assign last_day = "" %}
     {% assign last_month = "" %}
-
+<!--
   <span class="lead">{{this_year}}</span>
-
+-->
   <ul>
   {% endif %}
     <li>
