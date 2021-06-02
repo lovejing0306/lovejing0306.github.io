@@ -16,7 +16,7 @@ permalink: /archives/
 .times {display:block;margin:15px 0;}/*首先，我们要创建一个容器class*/
 .times ul {margin-left:6px;border-left:5px solid #ddd;list-style-type:none;}/*利用ul标签的特性，设置外边框左移25px，左边边框是2px粗的实心线，颜色一般要浅一点*/
 .times ul li {width:100%;margin-left:-47px;margin-bottom:5px;line-height:27px;font-weight:narmal;}/*一般情况，通过li标签控制圆点回到时间线上，然后控制要出现的文字大小和是否粗体*/
-.times ul li b {width:15px;height:15px;background:#fff;border:2px solid #555;margin:6px;border-radius:9px;-webkit-border-radius:9px;-moz-border-radius:9px;overflow:hidden;display:inline-block;float:left;}/*利用处理加粗以外没有其它特别属性b标签做时间轴的圆点。*/
+.times ul li b {width:25px;height:25px;background:#fff;border:2px solid #555;margin:6px;border-radius:9px;-webkit-border-radius:9px;-moz-border-radius:9px;overflow:hidden;display:inline-block;float:left;}/*利用处理加粗以外没有其它特别属性b标签做时间轴的圆点。*/
 .times ul li span {margin-bottom:7px;padding-left:7px;font-size:16px;line-height:27px;color:#555;}/*设置span标签的属性，让它来做时间显示，加一点边距，使时间显示离时间线远一点*/
 .times ul li:hover b {border:2px solid #ff6600;}/*注意这一行，前面的li标签后面加了一个:hover伪属性，意思是鼠标移上来，激活后面的属性，这样可以设置鼠标移动到整个时间范围的时候，时间点和时间显示会变色*/
 .times ul li:hover span {color:#ff6600;}  /*同上*/
