@@ -35,7 +35,7 @@ permalink: /archives/
   {% endif %}
     <li>
         <b></b>
-        <span style="font-size:12px;line-height:20px;">{{ post.date | date:"%m-%d" }}</span>
+        <span style="font-size:12px;line-height:20px;display:inline-block;">{{ post.date | date:"%m-%d" }}</span>
         <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
     </li>
   {% if forloop.last %}
