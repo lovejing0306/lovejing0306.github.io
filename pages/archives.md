@@ -35,7 +35,7 @@ permalink: /archives/
   {% endif %}
     <li>
         <b></b>
-        <span>{{ post.date | date:"%m-%d" }}</span>
+        <span class="posts-list-meta">{{ post.date | date:"%m-%d" }}</span>
         <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
     </li>
   {% if forloop.last %}
