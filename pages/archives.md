@@ -37,7 +37,7 @@ margin-bottom:7px;line-height:20px;font-weight:narmal;}/*一般情况，通过li
     <li>
         <b></b>
         <span style="font-size:12px;line-height:20px;display:inline-block;">{{ post.date | date:"%m-%d" }}</span>
-        <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+        <span><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></span>
     </li>
   {% if forloop.last %}
   </ul>
