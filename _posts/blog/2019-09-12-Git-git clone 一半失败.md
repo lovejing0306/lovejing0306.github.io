@@ -11,12 +11,14 @@ keywords: Git
 
 ## 解决方案 1
 有时候使用
+
 ```
 git clone https://github.com/xxx.git
 ```
 从github上拉取项目时会提示下载失败。
 
 可以尝试把`https://`换成 `git://`
+
 ```
 git clone git://github.com/xxx.git
 ```
