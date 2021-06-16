@@ -20,8 +20,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet1.jpg?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -36,8 +35,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet2.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -70,8 +68,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet3.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -103,8 +100,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet4.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -130,8 +126,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet5.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -157,8 +152,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet6.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -190,8 +184,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet7.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -214,8 +207,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet8.png?raw=true"
-    width=640 height=
-    >
+    width="640" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -237,8 +229,7 @@ keywords: Classification
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/AlexNet/alexnet9.png?raw=true"
-    width=512 height=
-    >
+    width="512" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
