@@ -26,8 +26,7 @@ $ResNeXt$ 的思想来源于基于一下两点：
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/ResNeXt/resnext-block.jpg?raw=true"
-    width=520 height=
-    >
+    width="520" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -54,8 +53,7 @@ $$
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/ResNeXt/neuron.jpg?raw=true"
-    width=320 height=
-    >
+    width="320" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -81,8 +79,7 @@ $$
 <center>
     <img 
     src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/ResNeXt/Equivalent-building-blocks-of-ResNeXt..jpg?raw=true"
-    width=720 height=
-    >
+    width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
