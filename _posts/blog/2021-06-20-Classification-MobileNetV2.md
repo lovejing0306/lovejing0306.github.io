@@ -21,7 +21,7 @@ $MobileNet \ V1$ 在设计的时候使用 $Deepwise \ Separable \ Convolution$ �
 ## 网络结构
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Table2.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Table2.jpg?raw=true"
     width="360" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -39,7 +39,7 @@ $MobileNet \ V1$ 在设计的时候使用 $Deepwise \ Separable \ Convolution$ �
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure1.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure1.jpg?raw=true"
     width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -79,7 +79,7 @@ $$
 结构如下图所示：
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/LinearBottlenecks.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/LinearBottlenecks.jpg?raw=true"
     width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -95,7 +95,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure3.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure3.jpg?raw=true"
     width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -108,7 +108,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure4.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure4.jpg?raw=true"
     width="360" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -119,7 +119,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure2.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure2.jpg?raw=true"
     width="540" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
