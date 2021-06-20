@@ -160,4 +160,4 @@ $SE$ 模块能够让网络自动学习到了每个特征通道的重要程度。
 
 [mobilenet系列之又一新成员---mobilenetV3](https://blog.csdn.net/Chunfengyanyulove/article/details/91358187)
 
-[CNN模型合集 | 24 MobileNet V3](https://zhuanlan.zhihu.com/p/69315156)
+[CNN模型合集 MobileNet V3](https://zhuanlan.zhihu.com/p/69315156)
