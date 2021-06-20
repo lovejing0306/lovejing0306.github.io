@@ -21,7 +21,7 @@ $MobileNet \ V1$ 在设计的时候使用 $Deepwise \ Separable \ Convolution$ �
 ## 网络结构
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Table2.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Table2.jpg?raw=true"
     width="360" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -30,7 +30,7 @@ $MobileNet \ V1$ 在设计的时候使用 $Deepwise \ Separable \ Convolution$ �
     padding: 2px;"> Table 2 </div>
 </center>
 
-## MobileNet-V2 改进
+## MobileNetV2 改进
 当单独去看特征图上每个通道的像素值时，其实这些值代表的特征可以映射到一个低维子空间的流形区域上。在完成卷积操作之后往往会接一层激活函数来增加特征的非线性性，一个最常见的激活函数便是 $relu$。
 
 由在残差网络中介绍的数据处理不等式($DPI$)，$relu$ 一定会带来信息损耗，而且这种损耗是没有办法恢复的，$relu$ 的信息损耗是当通道数非常少的时候更为明显。
@@ -39,7 +39,7 @@ $MobileNet \ V1$ 在设计的时候使用 $Deepwise \ Separable \ Convolution$ �
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure1.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure1.jpg?raw=true"
     width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -79,7 +79,7 @@ $$
 结构如下图所示：
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/LinearBottlenecks.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/LinearBottlenecks.jpg?raw=true"
     width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -95,7 +95,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure3.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure3.jpg?raw=true"
     width="720" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -108,7 +108,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure4.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure4.jpg?raw=true"
     width="360" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -119,7 +119,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNet-V2/Figure2.jpg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/DeepLearning/Model/MobileNetV2/Figure2.jpg?raw=true"
     width="540" height="" />
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
@@ -137,6 +137,6 @@ $Depthwise \ Separable \ Convolution$ 的设计非常精彩但遗憾的是目前
 
 [MobileNet v1 和 MobileNet v2](https://zhuanlan.zhihu.com/p/50045821)
 
-[MobileNet V2 详解](https://perper.site/2019/03/04/MobileNet-V2-%E8%AF%A6%E8%A7%A3/)
+[MobileNet V2 详解](https://perper.site/2019/03/04/MobileNetV2-%E8%AF%A6%E8%A7%A3/)
 
 [MobileNet V2 论文初读](https://zhuanlan.zhihu.com/p/33075914)
