@@ -28,7 +28,7 @@ keywords: MachineLearning
 &emsp;&emsp;给定一个点集 $D$，用一个函数去拟合该点集，使得点集与拟合函数间的误差最小，如果拟合后的函数描述的是一条直线，被称为线性回归，如果拟合后的函数描述的是一条曲线，被称为非线性回归。
 
 ### 问题
-&emsp;&emsp;给定数据集 $D=\left\{ \left( { x }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { x }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { x }  _  { N },{ \tilde { y }  }  _  { N } \right)  \right\}$，其中 ${ x }  _  { i }={ \left( { x }  _  { i,1 },{ x }  _  { i,2 },\cdots ,{ x }  _  { i,n } \right)  }^{ T }\in X\subseteq { R }^{ n }$;${ \tilde { y }  }  _  { i }\in Y\subseteq R$。线性回归问题试图学习模型：
+&emsp;&emsp;给定数据集 $D=\{ \left( { x }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { x }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { x }  _  { N },{ \tilde { y }  }  _  { N } \right)  \}$，其中 ${ x }  _  { i }={ \left( { x }  _  { i,1 },{ x }  _  { i,2 },\cdots ,{ x }  _  { i,n } \right)  }^{ T }\in X\subseteq { R }^{ n }$;${ \tilde { y }  }  _  { i }\in Y\subseteq R$。线性回归问题试图学习模型：
 
 $$
 f\left( x \right) =w\cdot x+b
@@ -79,10 +79,10 @@ $$
 
 $$
 \begin{aligned}
-L\left( \theta  \right) &=\frac { 1 }{ 2 } { \left( X\theta -Y \right)  }^{ T }{ \left( X\theta -Y \right)  }\\ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }-{ Y }^{ T } \right) \left( X\theta -Y \right) \\ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }X\theta -{ \theta  }^{ T }{ X }^{ T }Y -{ Y }^{ T }X\theta -{ Y }^{ T }Y \right) 
+L\left( \theta  \right) &=\frac { 1 }{ 2 } { \left( X\theta -Y \right)  }^{ T }{ \left( X\theta -Y \right)  }\ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }-{ Y }^{ T } \right) \left( X\theta -Y \right) \ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }X\theta -{ \theta  }^{ T }{ X }^{ T }Y -{ Y }^{ T }X\theta -{ Y }^{ T }Y \right) 
 \end{aligned}
-
 $$
+
 其中，$X$ 为 $m$ 行 $n$ 列的矩阵。
 
 &emsp;&emsp;为求得 $L\left( \theta  \right) $ 的极小值，可以通过对 $\theta $ 求导，并令导数为零，从而得到解析解：
