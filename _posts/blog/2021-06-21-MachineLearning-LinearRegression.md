@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{aligned}
-L\left( \theta  \right) &=\frac { 1 }{ 2 } { \left( X\theta -Y \right)  }^{ T }{ \left( X\theta -Y \right)  }\ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }-{ Y }^{ T } \right) \left( X\theta -Y \right) \ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }X\theta -{ \theta  }^{ T }{ X }^{ T }Y -{ Y }^{ T }X\theta -{ Y }^{ T }Y \right) 
+L\left( \theta  \right) &=\frac { 1 }{ 2 } { \left( X\theta -Y \right)  }^{ T }{ \left( X \theta -Y \right)  } \\ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }-{ Y }^{ T } \right) \left( X\theta -Y \right) \\ &=\frac { 1 }{ 2 } \left( { \theta  }^{ T }{ X }^{ T }X \theta -{ \theta  }^{ T }{ X }^{ T }Y -{ Y }^{ T }X \theta -{ Y }^{ T }Y \right) 
 \end{aligned}
 $$
 
