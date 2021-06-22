@@ -23,7 +23,16 @@ keywords: MachineLearning
 
 &emsp;&emsp;将数据投影到直线上，则：两类样本的中心在直线上的投影分别为 ${ w }^{ T }{ \mu  }  _  { 0 }$ 和${ w }^{ T }{ \mu  }  _  { 1 }$ ；两类样本投影的方差分别为 ${ w }^{ T }{ \Sigma  }  _  { 0 }w$ 和 ${ w }^{ T }{ \Sigma  }  _  { 1 }w$ (由于直线是一维空间，因此上面四个值均为实数)。投影结果如下图所示：
 
-![LDA](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/linear/lda.png)
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/LDA/lda.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">ResNeXt block</div>
+</center>
  
 &emsp;&emsp;根据线性判别分析的思想：
 1. 要使同类样例的投影点尽可能接近，则可以使同类样例投影点的方差尽可能小，即 ${ w }^{ T }{ \Sigma  }  _  { 0 }w+{ w }^{ T }{ \Sigma  }  _  { 1 }w$ 尽可能小；
