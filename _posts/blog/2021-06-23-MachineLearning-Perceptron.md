@@ -33,9 +33,9 @@ $$
 
 &emsp;&emsp;根据感知机的定义：对分类正确的点 $\left( { x }  _  { i },{ y }  _  { i } \right)$，有 $\left( { w }^{ T }{ x }  _  { i }+b \right) { y }  _  { i }>0$。对分类错误的点 $\left( { x }  _  { i },{ y }  _  { i } \right) $，有 $\left( { w }^{ T }{ x }  _  { i }+b \right) { y }  _  { i }<0$。
 
-损失函数一个自然的选择是误分类点的总数。但是这样的损失函数不是参数 $w$，$b$的连续可导函数，不易优化。这里选择的损失函数是误分类点到超平面 $S$ 的总距离。
+损失函数一个自然的选择是误分类点的总数。但是这样的损失函数不是参数 $w$，$b$ 的连续可导函数，不易优化。这里选择的损失函数是误分类点到超平面 $S$ 的总距离。
 
-&emsp;&emsp;输入空间${ \mathbb R }^{ n }$中任一点${ x }  _  { i }$到超平面$S$的距离为：
+&emsp;&emsp;输入空间 ${ \mathbb R }^{ n }$中任一点${ x }  _  { i }$ 到超平面 $S$ 的距离为：
 
 $$
 \frac { \left| { w }^{ T }{ x }_ { i }+b \right|  }{ { \left\| w \right\|  }_ { 2 } } 
@@ -95,12 +95,12 @@ w&\leftarrow w+\eta { y }_ { i }{ x }_ { i }\\ b&\leftarrow b+\eta { y }_ { i }
 \end{aligned}
 $$
 
-其中，$\eta \in (0,1]$是步长，即学习率。通过迭代可以使得损失函数 $L(w,b)$ 不断减小直到 $0$。
+其中，$\eta \in (0,1]$ 是步长，即学习率。通过迭代可以使得损失函数 $L(w,b)$ 不断减小直到 $0$。
   
 ## 伪码
 
 输入：
-1. 线性可分训练集$D=、\{ \left( { x }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { x }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { x }  _  { N },{ \tilde { y }  }  _  { N } \right)  \} $，其中 ${ x }  _  { i }={ \left( { x }  _  { i,1 },{ x }  _  { i,2 },\cdots ,{ x }  _  { i,n } \right)  }^{ T }\in X\subseteq { R }^{ n }$;${ \tilde { y }  }  _  { i }\in Y={ +1,-1} $；$i=1,2,\cdots ,N$；
+1. 线性可分训练集 $D=\{ \left( { x }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { x }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { x }  _  { N },{ \tilde { y }  }  _  { N } \right)  \} $，其中 ${ x }  _  { i }={ \left( { x }  _  { i,1 },{ x }  _  { i,2 },\cdots ,{ x }  _  { i,n } \right)  }^{ T }\in X\subseteq { R }^{ n }$;${ \tilde { y }  }  _  { i }\in Y={ +1,-1} $；$i=1,2,\cdots ,N$；
 2. 学习率$\eta \in (0,1]$
 
 输出：
@@ -180,7 +180,7 @@ $$
    { \alpha  }_ { i }&\leftarrow { \alpha  }_ { i }+\eta \\ b&\leftarrow b+\eta { y }_ { i }
    \end{aligned}
    $$
-3. 在训练集中重复选取数据来更新 $\alpha $，$b$直到训练集中没有误分类点。
+3. 在训练集中重复选取数据来更新 $\alpha $，$b$ 直到训练集中没有误分类点。
 
 &emsp;&emsp;在对偶形式中，训练集 $D$ 仅仅以内积的形式出现，因为算法只需要内积信息。可以预先将 $D$ 中的实例间的内积计算出来，并以矩阵形式存储。即 $Gram$ 矩阵：
 
