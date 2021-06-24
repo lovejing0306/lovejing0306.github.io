@@ -25,7 +25,7 @@ $$
 p\left( y=1|x \right) =\begin{cases} 0,&z<0 \\ 0.5,&z=0 \\ 1,&z>0 \end{cases},z={ w }^{ T }x+b
 $$
 
-但是阶跃函数不满足单调可微的性质，不能直接用作 $ g(\cdot)$。
+但是阶跃函数不满足单调可微的性质，不能直接用作 $g(\cdot)$。
 
 &emsp;&emsp;对数几率函数($logistic \ function$)就是这样的一个替代函数：
 
@@ -35,13 +35,13 @@ $$
 
 这样的模型称作对数几率回归($logistic \ regression$或$logit \ regression$）模型。
 
-&emsp;&emsp;由于$p\left( y=0|x \right) =1-p\left( y=1|x \right) $，则有：
+&emsp;&emsp;由于$p\left( y=0 \| x \right) =1-p\left( y=1 \| x \right) $，则有：
 
 $$
 \ln { \frac { p\left( y=1|x \right)  }{ p\left( y=0|x \right)  }  } ={ w }^{ T }x+b
 $$
 
-其中，比值 $\frac { p\left( y=1|x \right)  }{ p\left( y=0|x \right)  } $ 称为几率，反映了样本作为正例的相对可能性。几率的对数称作对数几率($log odds$，也称作 $logit$)。
+其中，比值 $\frac { p\left( y=1 \| x \right)  }{ p\left( y=0 \| x \right)  } $ 称为几率，反映了样本作为正例的相对可能性。几率的对数称作对数几率($log odds$，也称作 $logit$)。
 
 &emsp;&emsp;虽然对数几率回归名字带有回归，但是它是一种分类的学习方法。其优点：
 1. 直接对分类的可能性进行建模，无需事先假设数据分布，这就避免了因为假设分布不准确带来的问题。
@@ -126,11 +126,11 @@ $$
     因为逻辑函数是单调增的，并且值域在 $(0, 1)$ 之间。
 
 ## 多分类模型
-&emsp;&emsp;二分类的 $logistic$ 回归模型可以推广到多分类问题。设离散型随机变量 $ y $ 的取值集合为：$\left\{ 1,2,\cdots ,K \right\} $，则多元 $logistic$ 回归模型为：
+&emsp;&emsp;二分类的 $logistic$ 回归模型可以推广到多分类问题。设离散型随机变量 $ y $ 的取值集合为：\{ 1,2,\cdots ,K \} $，则多元 $logistic$ 回归模型为：
 
 $$
 \begin{aligned}
-p\left( y=k|x \right) &=\frac { exp\left( { w }^{ T }{ x }_{ k }+b \right)  }{ 1+\sum _{ j=1 }^{ K-1 }{ exp\left( { w }^{ T }{ x }_{ j }+b \right)  }  } ,k=1,2,\cdots ,K-1\\ p\left( y=K|x \right) &=\frac { 1 }{ 1+\sum _{ j=1 }^{ K-1 }{ exp\left( { w }^{ T }{ x }_{ j }+b \right)  }  } 
+p\left( y=k|x \right) &=\frac { exp\left( { w }^{ T }{ x }_ { k }+b \right)  }{ 1+\sum _{ j=1 }^{ K-1 }{ exp\left( { w }^{ T }{ x }_{ j }+b \right)  }  } ,k=1,2,\cdots ,K-1\\ p\left( y=K|x \right) &=\frac { 1 }{ 1+\sum _{ j=1 }^{ K-1 }{ exp\left( { w }^{ T }{ x }_{ j }+b \right)  }  } 
 \end{aligned}
 $$
 
