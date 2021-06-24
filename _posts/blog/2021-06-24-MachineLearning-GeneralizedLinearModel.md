@@ -71,7 +71,7 @@ $$
     
 
 ### 多元伯努利分布
-&emsp;&emsp;假设有 $K$ 个分类，样本标记 $\tilde { y } \in \left\{ 1,2,\cdots ,K \right\} $。每种分类对应的概率为 ${ \phi  }  _  { 1 },{ \phi  }  _  { 2 },\cdots ,{ \phi  }  _  { K }$。则根据全概率公式有:
+&emsp;&emsp;假设有 $K$ 个分类，样本标记 $\tilde { y } \in \{ 1,2,\cdots ,K \} $。每种分类对应的概率为 ${ \phi  }  _  { 1 },{ \phi  }  _  { 2 },\cdots ,{ \phi  }  _  { K }$。则根据全概率公式有:
 
 $$
 \begin{aligned} 
