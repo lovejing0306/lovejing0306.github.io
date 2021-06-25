@@ -20,12 +20,12 @@ keywords: MachineLearning
    4. 强化学习：从系统与环境的大量交互知识中训练模型。
 3. 机器学习根据算法类型，可以划分为：
    1. 传统统计学习<br>
-      基于数学模型的机器学习方法。包括SVM、逻辑回归、决策树等。
+      基于数学模型的机器学习方法。包括 $SVM$、逻辑回归、决策树等。
       这一类算法基于严格的数学推理，具有可解释性强、运行速度快、可应用于小规模数据集的特点。
    2. 深度学习<br>
       基于神经网络的机器学习方法。包括前馈神经网络、卷积神经网络、递归神经网络等。这一类算法基于神经网络，可解释性较差，强烈依赖于数据集规模。但是这类算法在语音、视觉、自然语言等领域非常成功。
         
-4. 没有免费的午餐定理($No \ Free \ Lunch \ Theorem:NFL$)：对于一个学习算法$A$，如果在某些问题上它比算法 $B$ 好，那么必然存在另一些问题，在那些问题中 $B$ 比 $A$ 更好。所以不存在在所有的问题上都取得最佳的性能的算法。因此要谈论算法的优劣必须基于具体的学习问题。
+4. 没有免费的午餐定理($No \ Free \ Lunch \ Theorem:NFL$)：对于一个学习算法 $A$，如果在某些问题上它比算法 $B$ 好，那么必然存在另一些问题，在那些问题中 $B$ 比 $A$ 更好。所以不存在在所有的问题上都取得最佳的性能的算法。因此要谈论算法的优劣必须基于具体的学习问题。
 
 ## 基本概念
 ### 特征空间
@@ -52,7 +52,7 @@ $$
 
 这里 ${ x }^{ \left( j \right)  }$ 为 $X$ 的第 $j$ 个特征的取值。第 $i$ 个输入记作 ${ X }  _  { i }$。
 
-训练数据由输入向量、目标值对组成。通常训练集表示为：$D=\left\{ \left( { X }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { X }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { X }  _  { N },{ \tilde { y }  }  _  { N } \right)  \right\} $。
+训练数据由输入向量、目标值对组成。通常训练集表示为：$D=\{ \left( { X }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { X }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { X }  _  { N },{ \tilde { y }  }  _  { N } \right)  \} $。
 1. 输入向量、目标值对又称作样本点。
 2. 假设每对输入向量、目标值对是独立同分布产生的。
 
@@ -67,32 +67,32 @@ $$
 2. 监督学习假设输入向量 $X$ 与目标值 $\tilde y$ 遵循联合概率分布 $P\left( X,y \right) $，训练数据和测试数据以联合概率分布 $P\left( X,y \right) $ 独立同分布产生。学习过程中，假定这个联合概率分布存在，但是具体定义未知。
 3. 监督学习的目的在于学习一个由输入到输出的映射，该映射由模型表示。模型属于由输入空间到输出空间的映射的集合，该集合就是解空间。解空间的确定意味着学习范围的确定。
 4. 监督学习模型可分为概率模型或者非概率模型：
-   1. 概率模型由条件概率分布 $P\left(y|X \right) $ 表示。
+   1. 概率模型由条件概率分布 $P\left(y \| X \right) $ 表示。
    2. 非概率模型由决策函数 $y=f\left( X \right) $ 表示。
-5. 监督学习分为学习和预测两个过程。给定训练集 $D=\left\{ \left( { X }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { X }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { X }  _  { N },{ \tilde { y }  }  _  { N } \right)  \right\} $，其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入值，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是目标值。假设训练数据与测试数据是以联合概率分布 $P\left( X,y \right) $ 独立同分布的产生的。
-   1. 学习过程：在给定的训练集 $D$ 上，通过学习训练得到一个模型。该模型表示为条件概率分布 $P\left( y|X \right) $ 或者决策函数 $y=f\left( X \right) $。
+5. 监督学习分为学习和预测两个过程。给定训练集 $D=\{ \left( { X }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { X }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { X }  _  { N },{ \tilde { y }  }  _  { N } \right)  \} $，其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入值，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是目标值。假设训练数据与测试数据是以联合概率分布 $P\left( X,y \right) $ 独立同分布的产生的。
+   1. 学习过程：在给定的训练集 $D$ 上，通过学习训练得到一个模型。该模型表示为条件概率分布 $P\left( y \| X \right) $ 或者决策函数 $y=f\left( X \right) $。
    2. 预测过程：对给定的测试样本 ${ X }  _  { test }$，给出其预测结果：
       1. 对于概率模型，其预测值为：${ \hat { y }  }  _  { test }={ arg }  _  { y }\max { p\left( y|X \right)  } $
       2. 对于非概率模型，其预测值为：${ \hat { y }  }  _  { test }=f\left( { X }  _  { test } \right) $
-6. 可以通过无监督学习来求解监督学习问题 $p\left( y|X \right) $：
+6. 可以通过无监督学习来求解监督学习问题 $p\left( y \| X \right) $：
    1. 首先求解无监督学习问题来学习联合概率分布 $p=\left( X,y \right) $
-   2. 然后计算：$p\left( y|X \right) =\frac { p=\left( X,y \right)  }{ \sum   _  { { y }^{ ' } }{ p=\left( X,{ y }^{ ' } \right)  }  } $。
+   2. 然后计算：$p\left( y \| X \right) =\frac { p=\left( X,y \right)  }{ \sum   _  { { y }^{ ' } }{ p=\left( X,{ y }^{ ' } \right)  }  } $。
 
 ### 生成模型和判别模型
 监督学习又分为生成方法和判别方法，所用到的模型分别称为生成模型和判别模型。
 
 #### 生成方法
-1. 概念：通过数据学习联合概率分布 $p=\left( X,y \right) $，然后求出条件概率分布 $p\left( y|X \right)$ 作为预测的模型。即生成模型为：
+1. 概念：通过数据学习联合概率分布 $p=\left( X,y \right) $，然后求出条件概率分布 $p\left( y \| X \right)$ 作为预测的模型。即生成模型为：
 
 $$
-p\left( y|X \right) =\frac { p=\left( X,y \right)  }{ p\left( x \right)  } 
+p\left( y \| X \right) =\frac { p=\left( X,y \right)  }{ p\left( x \right)  } 
 $$
 
 2. 优点：可以还原联合概率分布 $p=\left( X,y \right) $，收敛速度快，当存在隐变量时只能用生成方法。
 3. 举例：朴素贝叶斯，隐马尔可夫链。
 
 #### 判别方法
-1. 概念：直接学习决策函数 $f\left( X \right) $ 或者条件概率分布 $P\left(y|X \right) $ 的模型。
+1. 概念：直接学习决策函数 $f\left( X \right) $ 或者条件概率分布 $P\left(y \| X \right) $ 的模型。
 2. 优点：直接预测，一般准确率更高，且一般比较简化问题。
 3. 举例：逻辑回归，决策树。
 
@@ -102,11 +102,11 @@ $$
 ### 模型
 1. 模型定义了解空间。监督学习中，模型就是要学习的条件概率分布或者决策函数。模型的解空间包含了所有可能的条件概率分布或者决策函数，因此解空间中的模型有无穷多个。
    1. 模型为条件概率分布：<br>
-      解空间为条件概率的集合：$F=\left\{ p|p\left( y|X \right)  \right\} $。其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入空间，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是输出空间。<br>
-      通常$F$是由一个参数向量 $\theta =\left( { \theta  }  _  { 1 },\cdots ,{ \theta  }  _  { n } \right) $ 决定的概率分布族：$F=\left\{ p|{ p }  _  { \theta  }\left( y|X \right) ,\theta \in R \right\} $。其中：${ p }  _  { \theta  }$ 只与 $\theta$ 有关，称 $\theta$ 为参数空间。
+      解空间为条件概率的集合：$F=\{ p|p\left( y \| X \right)  \} $。其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入空间，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是输出空间。<br>
+      通常$F$是由一个参数向量 $\theta =\left( { \theta  }  _  { 1 },\cdots ,{ \theta  }  _  { n } \right) $ 决定的概率分布族：$F=\{ p|{ p }  _  { \theta  }\left( y|X \right) ,\theta \in R \} $。其中：${ p }  _  { \theta  }$ 只与 $\theta$ 有关，称 $\theta$ 为参数空间。
    2. 模型为一个决策函数：<br>
-      解空间为决策函数的集合：$F=\left\{ f|y=f\left( X \right)  \right\} $。其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入空间，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是输出空间。<br>
-      通常 $F$ 是由一个参数向量 $\theta =\left( { \theta  }  _  { 1 },\cdots ,{ \theta  }  _  { n } \right) $ 决定的函数族：$F=\left\{ f|y={ f }  _  { \theta  }\left( X \right) ,\theta \in R \right\} $。其中：${ f }  _  { \theta  }$ 只与 $\theta$ 有关，称 $\theta$ 为参数空间。
+      解空间为决策函数的集合：$F=\{ f|y=f\left( X \right)  \} $。其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入空间，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是输出空间。<br>
+      通常 $F$ 是由一个参数向量 $\theta =\left( { \theta  }  _  { 1 },\cdots ,{ \theta  }  _  { n } \right) $ 决定的函数族：$F=\{ f|y={ f }  _  { \theta  }\left( X \right) ,\theta \in R \} $。其中：${ f }  _  { \theta  }$ 只与 $\theta$ 有关，称 $\theta$ 为参数空间。
 2. 解的表示一旦确定，解空间以及解空间的规模大小就确定了。
 3. 可将学习过程看作一个在解空间中进行搜索的过程，搜索目标就是找到与训练集匹配的解。
 
