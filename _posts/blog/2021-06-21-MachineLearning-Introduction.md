@@ -72,7 +72,7 @@ $$
 5. 监督学习分为学习和预测两个过程。给定训练集 $D=\{ \left( { X }  _  { 1 },{ \tilde { y }  }  _  { 1 } \right) ,\left( { X }  _  { 2 },{ \tilde { y }  }  _  { 2 } \right) ,\cdots ,\left( { X }  _  { N },{ \tilde { y }  }  _  { N } \right)  \} $，其中 ${ X }  _  { i }\in {\mathcal X} $ 为输入值，${ \tilde { y }  }  _  { i }\in {\mathcal Y}$ 是目标值。假设训练数据与测试数据是以联合概率分布 $P\left( X,y \right) $ 独立同分布的产生的。
    1. 学习过程：在给定的训练集 $D$ 上，通过学习训练得到一个模型。该模型表示为条件概率分布 $P\left( y \| X \right) $ 或者决策函数 $y=f\left( X \right) $。
    2. 预测过程：对给定的测试样本 ${ X }  _  { test }$，给出其预测结果：
-      1. 对于概率模型，其预测值为：${ \hat { y }  }  _  { test }={ arg }  _  { y }\max { p\left( y|X \right)  } $
+      1. 对于概率模型，其预测值为：${ \hat { y }  }  _  { test }={ arg }  _  { y }\max { p\left( y \| X \right)  } $
       2. 对于非概率模型，其预测值为：${ \hat { y }  }  _  { test }=f\left( { X }  _  { test } \right) $
 6. 可以通过无监督学习来求解监督学习问题 $p\left( y \| X \right) $：
    1. 首先求解无监督学习问题来学习联合概率分布 $p=\left( X,y \right) $
