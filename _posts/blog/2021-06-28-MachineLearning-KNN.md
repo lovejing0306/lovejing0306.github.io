@@ -203,7 +203,7 @@ $ kd $ 树搜索的平均计算复杂度为 $ O(\log N) $， $N$为训练集大�
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Show 1 </div>
 </center>
 
 但是如果样本点的分布比较糟糕时，需要几乎遍历所有的结点：
@@ -216,7 +216,7 @@ $ kd $ 树搜索的平均计算复杂度为 $ O(\log N) $， $N$为训练集大�
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Show 2</div>
 </center>    
 
 #### 示例
@@ -237,7 +237,7 @@ $ kd $ 树搜索的平均计算复杂度为 $ O(\log N) $， $N$为训练集大�
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Tree 1 </div>
 </center>
 
 样本空间结构图如下：
@@ -250,7 +250,7 @@ $ kd $ 树搜索的平均计算复杂度为 $ O(\log N) $， $N$为训练集大�
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Tree 2 </div>
 </center>
 
 
@@ -266,7 +266,7 @@ $ kd $ 树如下：
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Tree 3 </div>
 </center>
 
 
@@ -287,7 +287,7 @@ $ kd $ 树如下：
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Tree 4 </div>
 </center>
 
 假设需要查询的点是 $P=(2,4.5)$ 。
@@ -306,5 +306,5 @@ $ kd $ 树如下：
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Depthwise Convolutional</div>
+    padding: 2px;"> KD Tree 5 </div>
 </center>
