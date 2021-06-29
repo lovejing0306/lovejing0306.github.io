@@ -52,7 +52,7 @@ $p(B \| A)$ 是已知 $A$ 发生后 $B$ 的条件概率，也由于得自 $A$ �
 ### 原理
 &emsp;&emsp;对于给定的待分类项，求解在此项出现的条件下各个类别出现的概率，哪个类别概率最大，就把待分类项标记为那个类别。
 
-&emsp;&emsp;设输入空间 $\mathcal X \subseteq \mathbb R^{n} $ 为 $n$ 维向量的集合 ，输出空间为类标记集合 $\mathcal Y=\left\{ { c }  _  { 1 },{ c }  _  { 2 },\cdots ,{ c }  _  { k } \right\} $。令 $x={ \left( { x }  _  { 1 },{ x }  _  { 2 },\cdots ,{ x }  _  { n } \right)  }^{ T }$ 为定义在 $ \mathcal X $ 上的随机向量，$y$ 为定义在 $\mathcal Y$ 上的随机变量。令 $p\left( x,y \right) $ 为 $x$ 和 $y$ 的联合概率分布，假设训练数据集 $\mathbb D=\left\{ \left( { x }  _  { 1 },{ y }  _  { 1 } \right) ,\left( { x }  _  { 2 },{ y }  _  { 2 } \right) ,\cdots ,\left( { x }  _  { m },{ y }  _  { m } \right)  \right\}$ 由 $p\left( x,y \right) $ 独立同分布产生。
+&emsp;&emsp;设输入空间 $\mathcal X \subseteq \mathbb R^{n} $ 为 $n$ 维向量的集合 ，输出空间为类标记集合 $\mathcal Y=\{ { c }  _  { 1 },{ c }  _  { 2 },\cdots ,{ c }  _  { k } \} $。令 $x={ \left( { x }  _  { 1 },{ x }  _  { 2 },\cdots ,{ x }  _  { n } \right)  }^{ T }$ 为定义在 $ \mathcal X $ 上的随机向量，$y$ 为定义在 $\mathcal Y$ 上的随机变量。令 $p\left( x,y \right) $ 为 $x$ 和 $y$ 的联合概率分布，假设训练数据集 $\mathbb D=\{ \left( { x }  _  { 1 },{ y }  _  { 1 } \right) ,\left( { x }  _  { 2 },{ y }  _  { 2 } \right) ,\cdots ,\left( { x }  _  { m },{ y }  _  { m } \right)  \}$ 由 $p\left( x,y \right) $ 独立同分布产生。
 
 &emsp;&emsp;朴素贝叶斯通过训练数据集 学习联合概率分布 $p\left( x,y \right) $。具体学习下列概率分布：
 
