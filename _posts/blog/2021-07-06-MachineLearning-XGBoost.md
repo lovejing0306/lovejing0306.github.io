@@ -25,7 +25,7 @@ $$
 \hat y_{i}^{<m-1>}=f_{m-1}(x_i),\quad g_i=\frac{\partial L(\tilde y_i,\hat y_{i}^{<m-1>})}{\partial \,\hat y_{i}^{<m-1>}},\quad h_i=\frac{\partial^2 L(\tilde y_i,\hat y_{i}^{<m-1>})}{\partial ^2\,\hat y_{i}^{<m-1>}}
 $$
 
-其中，$g  _  i$ 为 $L(\tilde y  _  i,\hat y  _  {i}^{<m-1>})$ 在 $\hat y  _  {i}^{<m-1>}$ 的一阶导数；$h  _  i$ 为 $L(\tilde y  _  i,\hat y  _  {i}^{<m-1>})$ 在 $\hat y  _  {i}^{<m-1>}$ 的二阶导数。
+其中，$g  _  i$ 为 $L(\tilde y  _  i,\hat y  _  {i}^{\<m-1\>})$ 在 $\hat y  _  {i}^{\<m-1\>}$ 的一阶导数；$h  _  i$ 为 $L(\tilde y  _  i,\hat y  _  {i}^{\<m-1\>})$ 在 $\hat y  _  {i}^{\<m-1\>}$ 的二阶导数。
 
 &emsp;&emsp;对目标函数 $L$ 执行二阶泰勒展开：
 
