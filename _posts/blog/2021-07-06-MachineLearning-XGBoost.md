@@ -81,13 +81,13 @@ $$
 假设 $w  _  j$ 与 $T,\mathbf G  _  j,\mathbf H  _  j$ 无关，对 $w  _  j$ 求导等于，则得到： 
 
 $$
-w_j^{\*}=-\frac{\mathbf G_j}{\mathbf H_j+\lambda} 
+w_j^{ \ * }=-\frac{\mathbf G_j}{\mathbf H_j+\lambda} 
 $$
 
 忽略常数项，于是定义目标函数为：
 
 $$
-L^{\*}=-\frac12 \sum_{j=1}^T\frac{\mathbf G_j^2}{\mathbf H_j+\lambda}+\gamma T
+L^{ \ * }=-\frac12 \sum_{j=1}^T\frac{\mathbf G_j^2}{\mathbf H_j+\lambda}+\gamma T
 $$
 
 &emsp;&emsp;在推导过程中假设 $w  _  j$ 与 $T,\mathbf G  _  j,\mathbf H  _  j$ 无关，这其实假设树的结构是已知的。事实上 $\mathcal L^{\*}$ 是与 $T$ 相关的，甚至与树的结构相关，因此定义 $L^{\*}$ 为结构分。结构分刻画了：当已知树的结构时目标函数的最小值。
