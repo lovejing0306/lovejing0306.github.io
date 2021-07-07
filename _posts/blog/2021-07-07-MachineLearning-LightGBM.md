@@ -148,7 +148,7 @@ $$
 &emsp;&emsp;现在考虑回归问题。对于拆分维度 $j$ 和拆分点 $d$， 令左子结点的样本下标为 $\mathbb L$，样本数量为 $n  _  {l\mid O}$ 右子结点的样本下标为 $\mathbb R$， 样本数量为 $n  _  {l\mid O}$。则方差增益：
 
 $$
-p(O)Var(y\mid O)-p(Left)Var(y\mid Left)-p(Right)Var(y\mid Right)= \frac{\sum_{i:x_i\in \mathbb O}g_i^2-\frac{\left(\sum_{i:x_i\in \mathbb O}g_i\right)^2}{n_O}}{N}-\frac{\sum_{i:x_i\in \mathbb L}g_i^2-\frac{\left(\sum_{i:x_i\in \mathbb L}g_i\right)^2}{n_{l\mid O}(d)}}{N}-\frac{\sum_{i:x_i\in \mathbb R}g_i^2-\frac{\left(\sum_{i:x_i\in \mathbb R}g_i\right)^2}{n_{r\mid O}(d)}}{N}
+p(O)Var(y\mid O)-p(Left)Var(y\mid Left)-p(Right)Var(y\mid Right) \\= \frac{\sum_{i:x_i\in \mathbb O}g_i^2-\frac{\left(\sum_{i:x_i\in \mathbb O}g_i\right)^2}{n_O}}{N}-\frac{\sum_{i:x_i\in \mathbb L}g_i^2-\frac{\left(\sum_{i:x_i\in \mathbb L}g_i\right)^2}{n_{l\mid O}(d)}}{N}-\frac{\sum_{i:x_i\in \mathbb R}g_i^2-\frac{\left(\sum_{i:x_i\in \mathbb R}g_i\right)^2}{n_{r\mid O}(d)}}{N}
 $$
 
 考虑到 $\mathbb O=\mathbb L \bigcup \mathbb R$，因此有：
