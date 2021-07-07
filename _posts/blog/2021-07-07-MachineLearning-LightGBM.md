@@ -160,7 +160,7 @@ $$
 因此则方差增益：
 
 $$
-p(O)Var(y\mid O)-p(Left)Var(y\mid Left)-p(Right)Var(y\mid Right)= \frac 1N\left[\frac{\left(\sum_{i:x_i\in \mathbb L}g_i\right)^2}{n_{l\mid O}(d)}+\frac{\left(\sum_{i:x_i\in \mathbb R}g_i\right)^2}{n_{r\mid O}(d)}-\frac{\left(\sum_{i:x_i\in \mathbb O}g_i\right)^2}{n_O}\right]
+p(O)Var(y\mid O)-p(Left)Var(y\mid Left)-p(Right)Var(y\mid Right) \\= \frac 1N\left[\frac{\left(\sum_{i:x_i\in \mathbb L}g_i\right)^2}{n_{l\mid O}(d)}+\frac{\left(\sum_{i:x_i\in \mathbb R}g_i\right)^2}{n_{r\mid O}(d)}-\frac{\left(\sum_{i:x_i\in \mathbb O}g_i\right)^2}{n_O}\right]
 $$
 
 考虑到总样本大小 $N$ 是个恒定值，因此可以去掉 $\frac 1N$。考虑到 $\frac{\left(\sum  _  {i:x  _  i\in \mathbb O}g  _  i\right)^2}{n  _  O}$ 并不随着结点 $O$ 的不同划分而变化因此定义：对于拆分维度 $j$ 和拆分点 $d$，方差增益为：
@@ -213,7 +213,7 @@ $$
 $$
 
 其中：
-1.  $C  _  {a,b}=\frac{1-a}{\sqrt b}\max  _  {i:x  _  i}\in \mathbb A^c|g  _  i|$，刻画的是剩余样本集合 $\mathbb A^c$ 中最大梯度的加权值。
+1.  $C_{a,b}=\frac{1-a}{\sqrt b}\max  _  {i:x  _  i}\in \mathbb A^{c} \|g  _  i \|$，刻画的是剩余样本集合 $\mathbb A^c$ 中最大梯度的加权值。
 2. $D=\max(\bar g  _  l(d),\bar g  _  r(d))$， 刻画的是未采取 $GOSS$ 时，划分的左子结点的梯度均值、右子结点的梯度均值中，较大的那个。
 
 结论：
