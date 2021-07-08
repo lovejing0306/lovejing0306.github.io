@@ -1,4 +1,16 @@
-# 支持向量机
+---
+layout: post
+title: SVM
+categories: [MachineLearning]
+description: SVM
+keywords: MachineLearning
+---
+
+
+SVM
+---
+
+
 &emsp;&emsp;支持向量机 ($Support \ Vector\ Machines:SVM$) 是一种二分类模型。它是定义在特征空间上的几何间隔最大的线性分类器。
 1. 间隔最大使得支持向量机有别于感知机（如果数据集是线性可分的，那么感知机获得的模型可能有很多个，而支持向量机选择的是间隔最大的那一个）。
 2. 支持向量机还支持核技巧，从而使它成为实质上的非线性分类器。
@@ -80,7 +92,7 @@ $$
 2. 一个点距离分离超平面越近，则该点的分类则不那么确信。
 
 在超平面 $w \cdot x+b=0$ 确定的情况下:
-1. $|w \cdot x  _  i+b|$ 能够相对地表示点 $x  _  i$ 距离超平面的远近。
+1. $ \|w \cdot x  _  i+b \|$ 能够相对地表示点 $x  _  i$ 距离超平面的远近。
 2. $w \cdot x  _  i+b$ 的符号与类标记 $\tilde y  _  i$ 的符号是否一致能表示分类是否正确
    1. $w \cdot x  _  i+b \gt 0 $ 时，即 $x  _  i$ 位于超平面上方，将 $x  _  i$ 预测为正类。此时若 $\tilde y  _  i=+1$ 则分类正确；否则分类错误。
    2. $w \cdot x  _  i+b \lt 0 $ 时，即 $x  _  i$ 位于超平面下方，将 $x  _  i$ 预测为负类。此时若 $\tilde y  _  i=-1$ 则分类正确；否则分类错误。
@@ -445,6 +457,7 @@ $$
       $$
       \begin{aligned} \min _ { \alpha  }{ \frac { 1 }{ 2 } \sum _ { i=1 }^{ N }{ \sum _ { j=1 }^{ N }{ { \alpha  }_ { i }{ \alpha  }_ { j }{ \tilde { y }  }_ { i }{ \tilde { y }  }_ { j }\left( { x }_ { i }\cdot { x }_ { j } \right)  }  } -\sum _ { i=1 }^{ N }{ { \alpha  }_ { i } }  }  \\ s.t.\sum _ { i=1 }^{ N }{ { \alpha  }_ { i }{ \tilde { y }  }_ { i } } =0 \\ { 0\le \alpha  }_ { i }\le C,i=1,2,\cdots ,N \end{aligned}
       $$
+      
       求得最优解 $\alpha^{ \ * }=(\alpha  _  1^{ \ * },\alpha  _  2^{ \ * },\cdots,\alpha  _  N^{ \ * })^{T}$。
    2. 计算：$w^{ \ * }=\sum  _  {i=1}^{N}\alpha  _  i^{ \ * }\tilde y  _  ix  _  i$。
    3. 选择 $\alpha^{ \ * }$ 的一个合适的分量 $C \gt \alpha  _  j^{ \ * } \gt 0$，计算： 
@@ -684,7 +697,7 @@ $$
 &emsp;&emsp;引入拉格朗日乘子，$\mu  _  i \ge 0,\hat \mu  _  i \ge 0,\alpha  _  i \ge 0,\hat\alpha  _  i \ge 0$，定义拉格朗日函数：
 
 $$
-L(w,b,\alpha,\hat{\alpha},\xi,\hat{\xi},\mu,\hat{\mu}) =\frac 12 \|\|w\|\|_2^{2}+C\sum_ {i=1}^{N}( \xi_i+\hat\xi_i)-\sum_ {i=1}^{N}\mu_i\xi_i-\sum_ {i-1}^{N}\hat\mu_i\hat\xi_i +\sum_ {i=1}^{N}\alpha_i\left( f(x_i)-\tilde y_i-\epsilon-\xi_i \right)+\sum_ {i-1}^{N}\hat\alpha_i\left(\tilde y_i-f(x_i)-\epsilon-\hat\xi_i\right)
+L(w,b,\alpha,\hat{\alpha},\xi,\hat{\xi},\mu,\hat{\mu}) \\ =\frac 12 \|\|w\|\|_2^{2}+C\sum_ {i=1}^{N}( \xi_i+\hat\xi_i)-\sum_ {i=1}^{N}\mu_i\xi_i-\sum_ {i-1}^{N}\hat\mu_i\hat\xi_i +\sum_ {i=1}^{N}\alpha_i\left( f(x_i)-\tilde y_i-\epsilon-\xi_i \right)+\sum_ {i-1}^{N}\hat\alpha_i\left(\tilde y_i-f(x_i)-\epsilon-\hat\xi_i\right)
 $$
 
 根据拉格朗日对偶性，原始问题的对偶问题是极大极小问题：
@@ -817,7 +830,7 @@ $$
 &emsp;&emsp;假设选择的两个变量是 $\alpha  _  1,\alpha  _  2$， 其他变量 $\alpha  _  i,i=3,4,\cdots,N$ 是固定的。于是 $SMO$ 的最优化问题的子问题为：
 
 $$
-\begin{aligned} \min _ { { \alpha  }_ { 1 },{ \alpha  }_ { 2 } }{ L\left( { \alpha  }_ { 1 },{ \alpha  }_ { 2 } \right) =\frac { 1 }{ 2 } { K }_ { 11 }{ \alpha  }_ { 1 }^{ 2 }+\frac { 1 }{ 2 } { K }_ { 22 }{ \alpha  }_ { 2 }^{ 2 }+\tilde { y } _ { 1 }{ \tilde { y }  }_ { 2 }{ K }_ { 12 }{ \alpha  }_ { 1 }{ \alpha  }_ { 2 }-\left( { \alpha  }_ { 1 }+{ \alpha  }_ { 2 } \right) +\tilde { y } _ { 1 }{ \alpha  }_ { 1 }\sum _ { i=1 }^{ 3 }{ \tilde { y } _ { i }{ \alpha  }_ { i }{ K }_ { i1 } } +\tilde { y } _ { 2 }{ \alpha  }_ { 2 }\sum _ { i=1 }^{ 3 }{ \tilde { y } _ { i }{ \alpha  }_ { i }{ K }_ { i2 } }  }  \\ s.t.{ \alpha  }_ { 1 }\tilde { y } _ { 1 }+{ \alpha  }_ { 2 }\tilde { y } _ { 2 }=-\sum _ { i=1 }^{ 3 }{ \tilde { y } _ { i }{ \alpha  }_ { i } } =\gamma  \\ 0\le { \alpha  }_ { i }\le C,i=1,2 \end{aligned}
+\begin{aligned} \min _ { { \alpha  }_ { 1 },{ \alpha  }_ { 2 } }{ L\left( { \alpha  }_ { 1 },{ \alpha  }_ { 2 } \right) \\ =\frac { 1 }{ 2 } { K }_ { 11 }{ \alpha  }_ { 1 }^{ 2 }+\frac { 1 }{ 2 } { K }_ { 22 }{ \alpha  }_ { 2 }^{ 2 }+\tilde { y } _ { 1 }{ \tilde { y }  }_ { 2 }{ K }_ { 12 }{ \alpha  }_ { 1 }{ \alpha  }_ { 2 }-\left( { \alpha  }_ { 1 }+{ \alpha  }_ { 2 } \right) +\tilde { y } _ { 1 }{ \alpha  }_ { 1 }\sum _ { i=1 }^{ 3 }{ \tilde { y } _ { i }{ \alpha  }_ { i }{ K }_ { i1 } } +\tilde { y } _ { 2 }{ \alpha  }_ { 2 }\sum _ { i=1 }^{ 3 }{ \tilde { y } _ { i }{ \alpha  }_ { i }{ K }_ { i2 } }  }  \\ s.t.{ \alpha  }_ { 1 }\tilde { y } _ { 1 }+{ \alpha  }_ { 2 }\tilde { y } _ { 2 }=-\sum _ { i=1 }^{ 3 }{ \tilde { y } _ { i }{ \alpha  }_ { i } } =\gamma  \\ 0\le { \alpha  }_ { i }\le C,i=1,2 \end{aligned}
 $$
 
 其中 $K  _  {ij}=K(x  _  i,x  _  j),i,j=1,2,\cdots,N,\quad \gamma$ 为常数，且目标函数式中省略了不含 $\alpha  _  1,\alpha  _  2$ 的常数项。
@@ -825,7 +838,7 @@ $$
 #### 取值范围约束
 $\alpha  _  1,\alpha  _  2$ 的约束条件为：
 
-当 $\tilde y  _  1,\tilde y  _  2$ 异号时，$\alpha  _  1,\alpha  _  2$ 位于直线 $|\alpha  _  1-\alpha  _  2|=\gamma$，且在矩形范围内。矩形的长为 $C$，宽为 $C$， 起始点坐标为 $(0,0)$： 
+当 $\tilde y  _  1,\tilde y  _  2$ 异号时，$\alpha  _  1,\alpha  _  2$ 位于直线 $ \|\alpha  _  1-\alpha  _  2 \|=\gamma$，且在矩形范围内。矩形的长为 $C$，宽为 $C$， 起始点坐标为 $(0,0)$： 
 
 
 <center>
