@@ -457,7 +457,6 @@ $$
       $$
       \begin{aligned} \min _ { \alpha  }{ \frac { 1 }{ 2 } \sum _ { i=1 }^{ N }{ \sum _ { j=1 }^{ N }{ { \alpha  }_ { i }{ \alpha  }_ { j }{ \tilde { y }  }_ { i }{ \tilde { y }  }_ { j }\left( { x }_ { i }\cdot { x }_ { j } \right)  }  } -\sum _ { i=1 }^{ N }{ { \alpha  }_ { i } }  }  \\ s.t.\sum _ { i=1 }^{ N }{ { \alpha  }_ { i }{ \tilde { y }  }_ { i } } =0 \\ { 0\le \alpha  }_ { i }\le C,i=1,2,\cdots ,N \end{aligned}
       $$
-      
       求得最优解 $\alpha^{ \ * }=(\alpha  _  1^{ \ * },\alpha  _  2^{ \ * },\cdots,\alpha  _  N^{ \ * })^{T}$。
    2. 计算：$w^{ \ * }=\sum  _  {i=1}^{N}\alpha  _  i^{ \ * }\tilde y  _  ix  _  i$。
    3. 选择 $\alpha^{ \ * }$ 的一个合适的分量 $C \gt \alpha  _  j^{ \ * } \gt 0$，计算： 
