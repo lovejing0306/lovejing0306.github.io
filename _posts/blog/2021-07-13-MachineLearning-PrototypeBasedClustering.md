@@ -31,7 +31,7 @@ $$
 err=\sum_{k=1}^{K}\sum_{x_i \in \mathbb C_k}||x_i-\mu_k||_ 2^{2}
 $$
 
-其中 $\mu  _  k=\frac {1}{|\mathbb C  _  k|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$ 是簇 $\mathbb C  _  k$ 的均值向量。
+其中 $\mu  _  k=\frac {1}{\|\mathbb C  _  k\|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$ 是簇 $\mathbb C  _  k$ 的均值向量。
 
 &emsp;&emsp;$err$ 刻画了簇类样本围绕簇均值向量的紧密程度，其值越小，则簇内样本相似度越高。$k-means$ 算法的优化目标为：最小化 $err$ ，即
 ：
@@ -51,7 +51,7 @@ $$
 2. 重复迭代直到算法收敛，迭代过程：
     1. 初始化阶段：取 $\mathbb C  _  k=\phi,k=1,2,\cdots,K$
     2. 划分阶段：令 $i=1,2,\cdots,N$：
-        1. 计算 $x  _  i$ 的簇标记：$\lambda  _  i=\arg\min  _  {k}||x  _  i-\mu  _  k||  _  2 ,k \in \{1,2,\cdots,K\}$。即：将 $x  _  i$ 离哪个簇的均值向量最近，则该样本就标记为那个簇。
+        1. 计算 $x  _  i$ 的簇标记：$\lambda  _  i=\arg\min  _  {k}\|\|x  _  i-\mu  _  k\|\|  _  2 ,k \in \{1,2,\cdots,K\}$。即：将 $x  _  i$ 离哪个簇的均值向量最近，则该样本就标记为那个簇。
         2. 然后将样本 $x  _  i$ 划入相应的簇：$\mathbb C  _  {\lambda  _  i}= \mathbb C  _  {\lambda  _  i} \bigcup\{x  _  i\}$。
                     
     3. 重计算阶段：计算 $\hat{\mu}  _  k$：$\hat{\mu}  _  k =\frac {1}{|\mathbb C  _  k|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$。
@@ -112,7 +112,7 @@ $$
 算法步骤：
 1. 从 $\mathbb D$ 中随机选择 $1$ 个样本作为初始均值向量组 ${\mu  _  1,}$。
 2. 迭代，直到初始均值向量组有 $K$ 个向量。假设初始均值向量组为 ${\mu  _  1,\cdots,\mu  _  m}$。迭代过程如下：
-    1. 对每个样本 $x  _  i$，分别计算其与 $\mu  _  1,\cdots,\mu  _  m$ 之间的距离，取这些距离中的最小值记做 $d  _  i=\min  _  {\mu  _  j} ||x  _  i-\mu  _  j||$。
+    1. 对每个样本 $x  _  i$，分别计算其与 $\mu  _  1,\cdots,\mu  _  m$ 之间的距离，取这些距离中的最小值记做 $d  _  i=\min  _  {\mu  _  j} \|\|x  _  i-\mu  _  j\|\|$。
     2. 对样本 $x  _  i$，其设置为初始均值向量的概率正比于 $d  _  i$，即：离所有的初始均值向量越远，则越可能被选中为下一个初始均值向量。
     3. 以概率分布 $P=\{d  _  1,d  _  2,\cdots,d  _  N\}$ （未归一化的）随机挑选一个样本作为下一个初始均值向量 $\mu  _  {m+1}$。
 3. 一旦挑选出初始均值向量组 ${\mu  _  1,\cdots,\mu  _  K}$，剩下的迭代步骤与 $k-means$ 相同。
@@ -152,7 +152,7 @@ $$
     2. 划分阶段：随机挑选一个 $Batch$ 的样本集合 $\mathbb B={x  _  {b  _  1},\cdots,x  _  {b  _  M}}$，其中 $M$ 为批大小。
         1. 计算 $x  _  i,i=b  _  1,\cdots,b  _  M$ 的簇标记：
            $$
-           \lambda_i=\arg\min_{k}||x_i-\mu_k||_ 2 ,k \in \{1,2,\cdots,K\} 
+           \lambda_i=\arg\min_{k}\|\|x_i-\mu_k\|\|_ 2 ,k \in \{1,2,\cdots,K\} 
            $$
            即：将 $x  _  i$ 离哪个簇的均值向量最近，则该样本就标记为那个簇。
         2. 然后将样本 $x  _  i,i=b  _  1,\cdots,b  _  M$ 划入相应的簇：$\mathbb C  _  {\lambda  _  i}= \mathbb C  _  {\lambda  _  i} \bigcup\{x  _  i\}$。
