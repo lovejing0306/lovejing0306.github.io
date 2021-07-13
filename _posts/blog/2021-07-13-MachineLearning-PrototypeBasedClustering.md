@@ -35,6 +35,7 @@ $$
 
 &emsp;&emsp;$err$ 刻画了簇类样本围绕簇均值向量的紧密程度，其值越小，则簇内样本相似度越高。$k-means$ 算法的优化目标为：最小化 $err$ ，即
 ：
+
 $$
 \min_{C} \sum_{k=1}^{K}\sum_{x_i \in C_k}||x_i-\mu_k||_ 2^{2} 
 $$
@@ -54,7 +55,7 @@ $$
         1. 计算 $x  _  i$ 的簇标记：$\lambda  _  i=\arg\min  _  {k}\|\|x  _  i-\mu  _  k\|\|  _  2 ,k \in \{1,2,\cdots,K\}$。即：将 $x  _  i$ 离哪个簇的均值向量最近，则该样本就标记为那个簇。
         2. 然后将样本 $x  _  i$ 划入相应的簇：$\mathbb C  _  {\lambda  _  i}= \mathbb C  _  {\lambda  _  i} \bigcup\{x  _  i\}$。
                     
-    3. 重计算阶段：计算 $\hat{\mu}  _  k$：$\hat{\mu}  _  k =\frac {1}{|\mathbb C  _  k|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$。
+    3. 重计算阶段：计算 $\hat{\mu}  _  k$：$\hat{\mu}  _  k =\frac {1}{\|\mathbb C  _  k\|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$。
     4. 终止条件判断：
         1. 如果对所有的 $k \in \{1,2,\cdots,K\}$，都有$\hat{\mu}  _  k=\mu  _  k$，则算法收敛，终止迭代。
         2. 否则重赋值 $\mu  _  k=\hat{\mu}  _  k$。
@@ -156,7 +157,7 @@ $$
            $$
            即：将 $x  _  i$ 离哪个簇的均值向量最近，则该样本就标记为那个簇。
         2. 然后将样本 $x  _  i,i=b  _  1,\cdots,b  _  M$ 划入相应的簇：$\mathbb C  _  {\lambda  _  i}= \mathbb C  _  {\lambda  _  i} \bigcup\{x  _  i\}$。
-    3. 重计算阶段：计算 $\hat{\mu}  _  k$：$\hat{\mu}  _  k =\frac {1}{|\mathbb C  _  k|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$。
+    3. 重计算阶段：计算 $\hat{\mu}  _  k$：$\hat{\mu}  _  k =\frac {1}{\|\mathbb C  _  k\|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$。
     4. 终止条件判断：
         1. 如果对所有的 $k \in \{1,2,\cdots,K\}$，都有 $\hat{\mu}  _  k=\mu  _  k$，则算法收敛，终止迭代。
         2. 否则重赋值 $\mu  _  k=\hat{\mu}  _  k$。
