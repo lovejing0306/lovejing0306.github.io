@@ -31,6 +31,7 @@ $$
 最小距离由两个簇的最近样本决定。
 
 #### 最大距离
+
 $$
 d_{max}(\mathbb C_i,\mathbb C_j)=\max_{x_i \in \mathbb C_i,x_j \in \mathbb C_j}distance(x_i,x_j)
 $$
