@@ -1164,7 +1164,7 @@ $$
 L=\sum_ {i=1}^N\log p_x(x_i)=\sum_ {i=1}^N\left(\log |W|+\sum_ {j=1}^n\log p_s(w_j^Tx_i)\right)
 $$
 
-根据最大似然准则，可以采用梯度下降法求解 $L$ 的最大值。其中：根据矩阵微积分有：$\nabla  _  {W}|W|=|W|(W^{-1})^T$。则有：
+根据最大似然准则，可以采用梯度下降法求解 $L$ 的最大值。其中：根据矩阵微积分有：$\nabla  _  {W}\|W\|=\|W\|(W^{-1})^T$。则有：
 
 $$
 \nabla_ {W}L =\begin{bmatrix}1-2g(w_1^Tx_i)\\ 1-2g(w_2^Tx_i)\\ \vdots\\ 1-2g(w_n^Tx_i) \end{bmatrix} x_i^T +( W^{-1})^{T}
