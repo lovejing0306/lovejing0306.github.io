@@ -286,8 +286,16 @@ $$
 
 因此$LDA$降维对于类别的区分效果要好的多。
 
-![pca _ lda](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/pca_lda.png)
-
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/pca_lda.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">pca_lda</div>
+</center>
 
 ### PCA 与 SVD
 &emsp;&emsp;酉矩阵：若 $n$ 阶矩阵满足 $\mathbf U^H\mathbf U=\mathbf U\mathbf U^H=\mathbf I$，则它是酉矩阵。其中 $\mathbf U^H$ 为 $\mathbf U$ 的共轭转置。$\mathbf U$ 为酉矩阵的充要条件是：$\mathbf U^H=\mathbf U^{-1}$。
@@ -602,8 +610,16 @@ $$
 
 其中：$C  _  {j,k}$ 刻画了 $x  _  k$ 到 $x  _  i$ 的差向量，与 $x  _  j$ 到 $x  _  i$ 的差向量的内积；$ w  _  {i,j}$ 刻画了这些内积中，与 $ x  _  j$ 相关的内积的比例。
 
-![lle](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/lle.png)
-
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/lle.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">lle</div>
+</center>
 
 #### 低维空间保持
 &emsp;&emsp;求出了线性重构的系数 $w  _  i$ 之后，$LLE$ 在低维空间中保持 $w  _  i$ 不变。设 $x  _  i$ 对应的低维坐标 $z  _  i$，已知线性重构的系数 $w  _  i$，定义样本集在低维空间中重构误差为：
@@ -1249,7 +1265,18 @@ $WW^T=I$，即 $w  _  i,w  _  j,i\ne j$ 相互正交且长度为 $1$。这也是
 ## t-SNE
 &emsp;&emsp;t-SNE ($t-distributed stochastic neighbor embedding$) 是一种非线性降维算法，它是由 $SNE$ 发展而来。
 
-![tsne](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/t-sne_optimise.gif)
+
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/t-sne_optimise.gif?raw=true"
+    width="540" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">tsne</div>
+</center>
+
 
 ### SNE
 &emsp;&emsp;$SNE$ 的基本思想：如果两个样本在高维相似，则它们在低维也相似。$SNE$ 主要包含两步：
@@ -1391,7 +1418,16 @@ $$
 p(r) = \lim_ {\Delta r\rightarrow 0 }\frac{(r+\Delta r)^n-r^n}{\Delta r} = nr^{n-1}
 $$
 
-![sne _ crowding](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/sne_crowding.png)
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/sne_crowding.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">sne_crowding</div>
+</center>
 
 累计概率分布为：
 
@@ -1399,7 +1435,16 @@ $$
 F(r)=\int_ {0}^r p(r)dr = r^n
 $$
 
-![sne _ crowding2](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/sne_crowding2.png)
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/sne_crowding2.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">sne_crowding2</div>
+</center>
 
 可以看到：随着空间维度的增长，采样点在原点附近的概率越低、在球体表面附近的概率越大。如果直接将这种距离分布关系保留到低维，则就会出现拥挤问题。
 
@@ -1430,8 +1475,17 @@ $t$ 分布相对于高斯分布更加偏重长尾。可以看到：
     
 即：同一个簇内的点（距离较近）聚合的更紧密，不同簇之间的点（距离较远）更加疏远。
 
-![t _ dist](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/sne_norm_t_dist_cost.png)
-    
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/sne_norm_t_dist_cost.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">t_dist</div>
+</center>
+   
 优化过程中的技巧：
 1. 提前压缩 ($early compression$)：开始初始化的时候，各个点要离得近一点。这样小的距离，方便各个聚类中心的移动。可以通过引入 $L2$ 正则项(距离的平方和)来实现。
 2. 提前放大 ($early exaggeration$)：在开始优化阶段，$p  _  {i,j}$ 乘以一个大于 $1$ 的数进行扩大，来避免 $q  _  {i,j}$ 太小导致优化太慢的问题。比如前$50$ 轮迭代，$p  _  {i,j}$ 放大四倍。
@@ -1527,18 +1581,45 @@ $$
 
 &emsp;&emsp;斥力部分的计算比较复杂，但是仍然有办法进行简化。考虑下图中的三个点，其中 $ \|\|z  _  i-z  _  j\|\| \simeq \|\|z  _  i-z  _  k\|\| \gg \|\|z  _  j-z  _  k|$。此时认为点 $z  _  j$ 和 $z  _  k$ 对点 $z  _  i$ 的斥力是近似相等的。
 
-![tsne2](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/tsne2.png)
+
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/tsne2.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">tsne2</div>
+</center>
     
 &emsp;&emsp;事实上这种情况在低维空间中很常见，甚至某片区域中每个点对 $z  _  i$ 的斥力都可以用同一个值来近似，如下图所示。假设区域 $\mathbb A$ 中 $4$ 个点对 $z  _  i$ 产生的斥力都是近似相等的，则可以计算这 $4$ 个点的中心（虚拟的点）产生的斥力 $ F  _  {\mathbb A  _  c}$，则区域  $\mathbb A$ 产生的总的斥力为$4 F  _  {\mathbb A  _  c}$。
         
-![tsne3](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/tsne3.png)
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/tsne3.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">tsne3</div>
+</center>
 
 &emsp;&emsp;$Matten$ 使用四叉树来完成区域搜索任务，并用该区域中心点产生的斥力作为整个区域的斥力代表值。并非所有区域都满足该近似条件，这里使用$Barnes-Hut$算法搜索并验证符合近似条件的点-区域组合 。
 
 &emsp;&emsp;事实上可以进一步优化，近似区域到区域之间的斥力。如下所示为区域 $\mathbb A$ 和区域 $\mathbb B$ 中，任意两个结点之间的斥力都可以用 $F  _  {\mathbb A\mathbb B  _  c}$ 来近似。其中 $F  _  {\mathbb A\mathbb B  _  c}$ 代表区域 $\mathbb A$ 的中心（虚拟的点）和区域 $\mathbb B$ 的中心（虚拟的点）产生的斥力。同样也需要判断两个区域之间的斥力是否满足近似条件。这里采用了 $Dual-tree$ 算法搜索并验证符合近似条件的区域-区域组合 。
 
-![tsne4](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/dimension_reduction/tsne4.png)
-        
+<center>
+    <img 
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/models/DimensionReduction/tsne4.png?raw=true"
+    width="320" height="" />
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">tsne4</div>
+</center>
 
 ## LargeVis
 数据可视化的本质任务是：在低维空间中保存高维数据的内在结构。即：
