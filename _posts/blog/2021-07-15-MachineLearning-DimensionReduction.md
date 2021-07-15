@@ -1303,7 +1303,7 @@ $$
 q_ {j\mid i} = q(z_j\mid z_i) = \frac{\exp\left(-\|\|z_j-z_i\|\|^2 \right)}{\sum_ {k\ne i}\exp\left(-\|\|z_k-z_i\|\|^2\right)}
 $$
 
-其中 $q  _  {j\mid i}$ 表示给定一个样本 $z  _  i$，然后计算 $z  _  1,\cdots, z  _  {i-1}, z  _  {i+1},\cdots,z  _  N\}$ 是 $z  _  j$ 的邻居的概率。这里选择 $\sigma^2 = \frac 12$ 为固定值。同样地，有 $q  _  {i\mid i} = 0$。定义概率分布 $Q  _  i=(q  _  {1\mid i},\cdots,q  _  {N\mid i})$ ，它刻画了所有其它样本是 $z  _  i$ 的邻居的概率分布。
+其中 $q  _  {j\mid i}$ 表示给定一个样本 $z  _  i$，然后计算 $z  _  1,\cdots, z  _  {i-1}, z  _  {i+1},\cdots,z  _  N$ 是 $z  _  j$ 的邻居的概率。这里选择 $\sigma^2 = \frac 12$ 为固定值。同样地，有 $q  _  {i\mid i} = 0$。定义概率分布 $Q  _  i=(q  _  {1\mid i},\cdots,q  _  {N\mid i})$ ，它刻画了所有其它样本是 $z  _  i$ 的邻居的概率分布。
 
 &emsp;&emsp;对于样本 $x  _  i$，如果降维的效果比较好，则有 $p  _  {j\mid i} = q  _  {j\mid i},i=1,2,\cdots,N$。即：降维前后不改变 $ x  _  i$ 周围的样本分布。
 对于 $x  _  i$，定义其损失函数为分布 $P  _  i$ 和 $ Q  _  i $ 的距离，通过 $KL$ 散度来度量。对于全体数据集 $\mathbb D$，整体损失函数为：
