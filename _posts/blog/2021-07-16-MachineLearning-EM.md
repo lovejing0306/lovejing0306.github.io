@@ -55,7 +55,7 @@ $$
 2. 迭代： $i=0,1,\cdots$ 
     1. 根据 $\{\mu  _  1^{ \< i \>},\sigma  _  1^{2 \< i \>},\mu  _  2^{ \< i \>},\sigma  _  2^{2 \< i \>}\}$ 来计算每个学生更可能是属于男生，还是属于女生。
         > 这一步为 $E$  步（ $Expectation$ ），用于计算隐变量的后验分布 $p(z\mid x)$ 。
-    2. 根据上一步的划分，统计所有男生的身高的均值和方差，得到 $\{\mu  _  1^{<i+1>},\sigma  _  1^{2<i+1>}\}$；统计所有女生的身高的均值和方差，得到 $\{\mu  _  2^{\<i+1\>},\sigma  _  2^{2\<i+1\>}\}$ 。
+    2. 根据上一步的划分，统计所有男生的身高的均值和方差，得到 $\{\mu  _  1^{\ < i+1 \ >},\sigma  _  1^{2\ < i+1 \ >}\}$；统计所有女生的身高的均值和方差，得到 $\{\mu  _  2^{\<i+1\>},\sigma  _  2^{2\<i+1\>}\}$ 。
         > 这一步为 $M$ 步（$Maximization$），用于通过最大似然函数求解正态分布的参数。
     3. 当前后两次迭代的参数变化不大时，迭代终止。
 
@@ -99,19 +99,20 @@ $$
 
 然后通过下面的步骤迭代计算参数的估计值，直到收敛为止：
 
-设第 $i$ 次迭代参数的估计值为： $\theta^{\<i\>}=(\pi^{\<i\>},p^{\<i\>},q^{\<i\>})$ ， 则 $EM$ 算法的第 $ i+1 $ 次迭代如下：
-1. $E$ 步：计算模型在参数 $\theta^{<i>}=(\pi^{<i>},p^{<i>},q^{<i>})$ 下，观测数据 $y  _  j$ 来自于投掷硬币 $B$ 的概率：
+设第 $i$ 次迭代参数的估计值为： $\theta^{\ < i \ >}=(\pi^{ \ < i \ >},p^{\ < i \ >},q^{\ < i \ >})$ ， 则 $EM$ 算法的第 $ i+1 $ 次迭代如下：
+1. $E$ 步：计算模型在参数 $\theta^{\ < i \ >}=(\pi^{\ < i \ >},p^{\ < i \ >},q^{\ < i \ >})$ 下，观测数据 $y  _  j$ 来自于投掷硬币 $B$ 的概率：
+    
     $$
-    \mu^{<i+1>}_ j=\frac{\pi^{<i>}(p^{<i>})^{y_j}(1-p^{<i>})^{1-y_j}}{\pi^{<i>}(p^{<i>})^{y_j}(1-p^{<i>})^{1-y_j}+(1-\pi^{<i>})(q^{<i>})^{y_j}(1-q^{<i>})^{1-y_j}}
+    \mu^{\ < i+1 \ >}_ j=\frac{\pi^{\ < i \ >}(p^{\ < i \ >})^{y_j}(1-p^{\ < i \ >})^{1-y_j}}{\pi^{\ < i \ >}(p^{\ < i \ >})^{y_j}(1-p^{\ < i \ >})^{1-y_j}+(1-\pi^{\ < i \ >})(q^{\ < i \ >})^{y_j}(1-q^{\ < i \ >})^{1-y_j}}
     $$
     它其实就是 $P(Z=1\mid Y=y  _  j)$ ，即：已知观测变量 $Y=y  _  j$ 的条件下，观测数据 $y  _  j$  来自于投掷硬币 $B$  的概率。
         
 2. $M$ 步：计算模型参数的新估计值：
     $$
     \begin{aligned}
-    	\pi ^{<i+1>}&=\frac{1}{N}\sum_ {j=1}^N{\mu _ {j}^{<i+1>}}\\
-    	p^{<i+1>}&=\frac{\sum_{j=1}^N{\mu _ {j}^{<i+1>}y_j}}{\sum_{j=1}^N{\mu _ {j}^{<i+1>}}}\\
-    	q^{<i+1>}&=\frac{\sum_{j=1}^N{\left( 1-\mu _ {j}^{<i+1>} \right) y_j}}{\sum_{j=1}^N{\left( 1-\mu _ {j}^{<i+1>} \right)}}\\
+    	\pi ^{\ < i+1 \ >}&=\frac{1}{N}\sum_ {j=1}^N{\mu _ {j}^{\ < i+1 \ >}}\\
+    	p^{\ < i+1 \ >}&=\frac{\sum_{j=1}^N{\mu _ {j}^{\ < i+1 \ >}y_j}}{\sum_{j=1}^N{\mu _ {j}^{\ < i+1 \ >}}}\\
+    	q^{\ < i+1 \ >}&=\frac{\sum_{j=1}^N{\left( 1-\mu _ {j}^{\ < i+1 \ >} \right) y_j}}{\sum_{j=1}^N{\left( 1-\mu _ {j}^{\ < i+1 \ >} \right)}}\\
     \end{aligned}
     $$
     1. 第一个式子：通过后验概率 $ P(Z \mid Y) $ 估计值的均值作为先验概率 $\pi$  的估计。
@@ -327,26 +328,26 @@ $$
 
 算法步骤：
 1. 选择参数的初值 $\theta^{<0> }$ ，开始迭代。
-2. $E$ 步：记 $\theta^{<i>}$ 为第 $i$ 次迭代参数 $\theta$ 的估计值，在第 $i+1$  次迭代的 $E$ 步，计算：
+2. $E$ 步：记 $\theta^{\ < i \ >}$ 为第 $i$ 次迭代参数 $\theta$ 的估计值，在第 $i+1$  次迭代的 $E$ 步，计算：
     $$
     \begin{aligned}
-    	Q\left( \theta ,\theta ^{<i>} \right) &=\sum_{j=1}^N{\mathbb{E}_ {P\left( Z|Y=y_j;\theta ^{<i>} \right)}\log P\left( Y=y_j,Z;\theta \right)}\\
-    	&=\sum_ {j=1}^N{\left( \sum_Z{P\left( Z|Y=y_j;\theta ^{<i>} \right) \log P\left( Y=y_{j,}Z;\theta \right)} \right)}
+    	Q\left( \theta ,\theta ^{\ < i \ >} \right) &=\sum_{j=1}^N{\mathbb{E}_ {P\left( Z|Y=y_j;\theta ^{\ < i \ >} \right)}\log P\left( Y=y_j,Z;\theta \right)}\\
+    	&=\sum_ {j=1}^N{\left( \sum_Z{P\left( Z|Y=y_j;\theta ^{\ < i \ >} \right) \log P\left( Y=y_{j,}Z;\theta \right)} \right)}
     \end{aligned}
     $$
     
-    其中 $\mathbb E  _  {P(Z\mid Y=y  _  j;\theta^{ \< i \> })}\log P(Y=y  _  j,Z ;\theta)$ 表示：对于观测点 $Y=y  _  j$ ， $\log P(Y=y  _  j,Z ;\theta)$ 关于后验概率 $P(Z\mid Y=y  _  j;\theta^{<i>})$ 的期望。
+    其中 $\mathbb E  _  {P(Z\mid Y=y  _  j;\theta^{ \< i \> })}\log P(Y=y  _  j,Z ;\theta)$ 表示：对于观测点 $Y=y  _  j$ ， $\log P(Y=y  _  j,Z ;\theta)$ 关于后验概率 $P(Z\mid Y=y  _  j;\theta^{\ < i \ >})$ 的期望。
 3. $M$ 步：求使得 $Q(\theta,\theta^{ \< i \>})$ 最大化的 $\theta$ ，确定 $i+1$  次迭代的参数的估计值 $\theta^{ \< i+1 \> }$ 
     $$
-    \theta^{<i+1>}=\arg\max_\theta Q(\theta,\theta^{<i>})
+    \theta^{\ < i+1 \ >}=\arg\max_\theta Q(\theta,\theta^{\ < i \ >})
     $$
 4. 重复上面两步，直到收敛。
 
 ### 收敛
-通常收敛的条件是：给定较小的正数  $\varepsilon  _  1,\varepsilon  _  2$ ，满足： $\|\|\theta^{<i+1>}-\theta^{<i>}\|\| \lt \varepsilon  _  1$ 或者 $\|\|Q(\theta^{<i+1>},\theta^{<i>})-Q(\theta^{<i>},\theta^{<i>})\|\| \lt \varepsilon  _  2$ 。
+通常收敛的条件是：给定较小的正数  $\varepsilon  _  1,\varepsilon  _  2$ ，满足： $\|\|\theta^{\ < i+1 \ >}-\theta^{\ < i \ >}\|\| \lt \varepsilon  _  1$ 或者 $\|\|Q(\theta^{\ < i+1 \ >},\theta^{\ < i \ >})-Q(\theta^{\ < i \ >},\theta^{\ < i \ >})\|\| \lt \varepsilon  _  2$ 。
 
 ### 核心    
-$Q(\theta,\theta^{<i>})$ 是算法的核心，称作 $Q$ 函数。其中：
+$Q(\theta,\theta^{\ < i \ >})$ 是算法的核心，称作 $Q$ 函数。其中：
 1. 第一个符号表示要极大化的参数（未知量）
 2. 第二个符号表示参数的当前估计值（已知量）
 
@@ -354,9 +355,9 @@ $Q(\theta,\theta^{<i>})$ 是算法的核心，称作 $Q$ 函数。其中：
 &emsp;&emsp; $EM$ 算法的直观理解： $EM$ 算法的目标是最大化对数似然函数 $L(\theta)=\log P(\mathbb Y)$ 。直接求解这个目标是有问题的。因为要求解该目标，首先要得到未观测数据的分布 $P(Z \mid Y;\theta)$  。如：身高抽样问题中，已知身高，需要知道该身高对应的是男生还是女生。
 但是未观测数据的分布就是待求目标参数 $\theta$ 的解的函数。这是一个“鸡生蛋-蛋生鸡” 的问题。
 
-&emsp;&emsp; $EM$ 算法试图多次猜测这个未观测数据的分布 $P(Z \mid Y;\theta)$ 。每一轮迭代都猜测一个参数值  $\theta^{<i>}$ ，该参数值都对应着一个未观测数据的分布 $ P(Z \mid Y;\theta^{<i>})$ 。如：已知身高分布的条件下，男生或女生的分布。
+&emsp;&emsp; $EM$ 算法试图多次猜测这个未观测数据的分布 $P(Z \mid Y;\theta)$ 。每一轮迭代都猜测一个参数值  $\theta^{\ < i \ >}$ ，该参数值都对应着一个未观测数据的分布 $ P(Z \mid Y;\theta^{\ < i \ >})$ 。如：已知身高分布的条件下，男生或女生的分布。
 
-&emsp;&emsp;然后通过最大化某个变量来求解参数值。这个变量就是 $B(\theta,\theta^{<i>})$  变量，它是真实的似然函数的下界 。  
+&emsp;&emsp;然后通过最大化某个变量来求解参数值。这个变量就是 $B(\theta,\theta^{\ < i \ >})$  变量，它是真实的似然函数的下界 。  
 1. 如果猜测正确，则 $B$ 就是真实的似然函数。
 2. 如果猜测不正确，则 $B$ 就是真实似然函数的一个下界。
 
@@ -368,20 +369,20 @@ $Q(\theta,\theta^{<i>})$ 是算法的核心，称作 $Q$ 函数。其中：
 定理一：设 $P(\mathbb Y;\theta)$ 为观测数据的似然函数， $\theta^{ \< i \>}$  为 $EM$ 算法得到的参数估计序列， $P(\mathbb Y;\theta^{ \< i \>})$  为对应的似然函数序列，其中 $i=1,2,\cdots$ 。则： $P(\mathbb Y;\theta^{\< i \>})$  是单调递增的，即：
 
 $$
-P(\mathbb Y;\theta^{<i+1>}) \ge P(\mathbb Y;\theta^{<i>}) 
+P(\mathbb Y;\theta^{\ < i+1 \ >}) \ge P(\mathbb Y;\theta^{\ < i \ >}) 
 $$
 
     
-定理二：设 $L(\theta)=\log P(\mathbb Y;\theta)$ 为观测数据的对数似然函数，  $\theta^{<i>}$ 为 $EM$ 算法得到的参数估计序列， $L(\theta^{<i>})$  为对应的对数似然函数序列，其中 $i=1,2,\cdots$ 。
-1. 如果 $P(\mathbb Y;\theta)$ 有上界，则 $L(\theta^{<i>})$ 会收敛到某一个值 $L^{ \ * }$ 。
-2. 在函数 $Q(\theta,\theta^{<i>})$ 与 $L(\theta)$ 满足一定条件下，由 $EM$  算法得到的参数估计序列 $\theta^{<i>}$ 的收敛值 $\theta^{ \ * }$ 是 $L(\theta)$  的稳定点。
+定理二：设 $L(\theta)=\log P(\mathbb Y;\theta)$ 为观测数据的对数似然函数，  $\theta^{\ < i \ >}$ 为 $EM$ 算法得到的参数估计序列， $L(\theta^{\ < i \ >})$  为对应的对数似然函数序列，其中 $i=1,2,\cdots$ 。
+1. 如果 $P(\mathbb Y;\theta)$ 有上界，则 $L(\theta^{\ < i \ >})$ 会收敛到某一个值 $L^{ \ * }$ 。
+2. 在函数 $Q(\theta,\theta^{\ < i \ >})$ 与 $L(\theta)$ 满足一定条件下，由 $EM$  算法得到的参数估计序列 $\theta^{\ < i \ >}$ 的收敛值 $\theta^{ \ * }$ 是 $L(\theta)$  的稳定点。
 > 关于 “满足一定条件”：大多数条件下其实都是满足的。
 
 定理二只能保证参数估计序列收敛到对数似然函数序列的稳定点 $L^{ \ * }$  ，不能保证收敛到极大值点。
     
 $EM$ 算法的收敛性包含两重意义：
-1. 关于对数似然函数序列 $L(\theta^{<i>})$ 的收敛。
-2. 关于参数估计序列 $\theta^{<i>}$ 的收敛。
+1. 关于对数似然函数序列 $L(\theta^{\ < i \ >})$ 的收敛。
+2. 关于参数估计序列 $\theta^{\ < i \ >}$ 的收敛。
 
 前者并不蕴含后者。
     
@@ -433,38 +434,38 @@ $$
 后验概率为：
 
 $$
-P(z=k\mid y=y_j;\theta^{<i>})=\frac{\alpha_k\frac{1}{\sqrt{2\pi}\sigma_k^{<i>}}\exp\left(-\frac{(y_j-\mu_k^{<i>})^{2}}{2\sigma_k^{^{<i>}2}}\right)}{\sum_{t=1}^K\alpha_t\frac{1}{\sqrt{2\pi}\sigma_t^{<i>}}\exp\left(-\frac{(y_j-\mu_t^{<i>})^{2}}{2\sigma_t^{^{<i>}2}}\right)}
+P(z=k\mid y=y_j;\theta^{\ < i \ >})=\frac{\alpha_k\frac{1}{\sqrt{2\pi}\sigma_k^{\ < i \ >}}\exp\left(-\frac{(y_j-\mu_k^{\ < i \ >})^{2}}{2\sigma_k^{^{\ < i \ >}2}}\right)}{\sum_{t=1}^K\alpha_t\frac{1}{\sqrt{2\pi}\sigma_t^{\ < i \ >}}\exp\left(-\frac{(y_j-\mu_t^{\ < i \ >})^{2}}{2\sigma_t^{^{\ < i \ >}2}}\right)}
 $$
 
-即： $P(z=k\mid y=y  _  j;\theta^{<i>})=\frac{P(y=y  _  j,z=k;\theta^{<t>})}{\sum  _  {t=1}^KP(y=y  _  j,z=t;\theta^{})}$ 。则 $Q$ 函数为：
+即： $P(z=k\mid y=y  _  j;\theta^{\ < i \ >})=\frac{P(y=y  _  j,z=k;\theta^{<t>})}{\sum  _  {t=1}^KP(y=y  _  j,z=t;\theta^{})}$ 。则 $Q$ 函数为：
 
 $$
 \begin{aligned}
-	Q\left( \theta ,\theta ^{<i>} \right) &=\sum_{j=1}^N{\left( \sum_Z{P\left( z|y=y_j;\theta ^{<i>} \right) \log P\left( y=y_j,z;\theta \right)} \right)}\\
-	&=\sum_{j=1}^N{\sum_{k=1}^K{P\left( z=k|y=y_j;\theta ^{<i>} \right) \left( \log \alpha _ k-\log \sqrt{2\pi}\sigma _ k-\frac{\left( y_j-\mu _ k \right) ^2}{2\sigma _ {k}^{2}} \right)}}\\
+	Q\left( \theta ,\theta ^{\ < i \ >} \right) &=\sum_{j=1}^N{\left( \sum_Z{P\left( z|y=y_j;\theta ^{\ < i \ >} \right) \log P\left( y=y_j,z;\theta \right)} \right)}\\
+	&=\sum_{j=1}^N{\sum_{k=1}^K{P\left( z=k|y=y_j;\theta ^{\ < i \ >} \right) \left( \log \alpha _ k-\log \sqrt{2\pi}\sigma _ k-\frac{\left( y_j-\mu _ k \right) ^2}{2\sigma _ {k}^{2}} \right)}}\\
 \end{aligned}
 $$
     
-&emsp;&emsp;求极大值： $\theta^{<i+1>}=\arg\max  _  {\theta}Q(\theta,\theta^{<i>})$ 。根据偏导数为 $0$ ，以及 $\sum  _  {k=1}^{K}\alpha  _  k=1$ 得到：
+&emsp;&emsp;求极大值： $\theta^{\ < i+1 \ >}=\arg\max  _  {\theta}Q(\theta,\theta^{\ < i \ >})$ 。根据偏导数为 $0$ ，以及 $\sum  _  {k=1}^{K}\alpha  _  k=1$ 得到：
     
 1.$\alpha  _  k$ ：
     $$
-    \alpha_k^{<i+1>}=\frac{n_k}{N}
+    \alpha_k^{\ < i+1 \ >}=\frac{n_k}{N}
     $$
-    其中： $n  _  k=\sum  _  {j=1}^NP(z=k\mid y=y  _  j;\theta^{<i>})$  ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$  个分模型的观测数据的数量。
+    其中： $n  _  k=\sum  _  {j=1}^NP(z=k\mid y=y  _  j;\theta^{\ < i \ >})$  ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$  个分模型的观测数据的数量。
         
 2.$\mu  _  k$ ：
     $$
-    \mu_k^{<i+1>}=\frac{\overline {Sum}_ k}{n_k}
+    \mu_k^{\ < i+1 \ >}=\frac{\overline {Sum}_ k}{n_k}
     $$
 
-    其中： $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{<i>})$  ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$  个分模型的观测数据的总和。
+    其中： $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{\ < i \ >})$  ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$  个分模型的观测数据的总和。
         
 3.$\sigma^2$ ：
     $$
-    \sigma_k^{<i+1>2}=\frac{\overline {Var}_ k}{n_k}
+    \sigma_k^{\ < i+1 \ >2}=\frac{\overline {Var}_ k}{n_k}
     $$   
-    其中：$\overline {Var}  _  k=\sum  _  {j=1}^N (y  _  j-\mu  _  k^{<i>})^2P(z=k\mid y=y  _  i;\theta^{<i>})$ ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$ 个分模型的观测数据，偏离第 $k$ 个模型的均值 $\mu  _  k^{<i>}$ 的平方和。
+    其中：$\overline {Var}  _  k=\sum  _  {j=1}^N (y  _  j-\mu  _  k^{\ < i \ >})^2P(z=k\mid y=y  _  i;\theta^{\ < i \ >})$ ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$ 个分模型的观测数据，偏离第 $k$ 个模型的均值 $\mu  _  k^{\ < i \ >}$ 的平方和。
         
 #### 伪码
 输入：
@@ -475,14 +476,14 @@ $$
 
 算法步骤：
 1. 随机初始化参数 $\theta^{<0>}$ 。
-2. 根据 $\theta^{<i>}$ 迭代求解 $\theta^{<i+1>}$ ，停止条件为：对数似然函数值或者参数估计值收敛。
+2. 根据 $\theta^{\ < i \ >}$ 迭代求解 $\theta^{\ < i+1 \ >}$ ，停止条件为：对数似然函数值或者参数估计值收敛。
     $$
-    \alpha_k^{<i+1>}=\frac{n_k}{N},\;\mu_k^{<i+1>}=\frac{\overline {Sum}_ k}{n_k},\;\sigma_k^{<i+1>2}=\frac{\overline {Var}_ k}{n_k}
+    \alpha_k^{\ < i+1 \ >}=\frac{n_k}{N},\;\mu_k^{\ < i+1 \ >}=\frac{\overline {Sum}_ k}{n_k},\;\sigma_k^{\ < i+1 \ >2}=\frac{\overline {Var}_ k}{n_k}
     $$
     其中：
-    1. $n  _  k=\sum  _  {j=1}^NP(z=k\mid y=y  _  j;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的数量。         
-    2. $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的总和。       
-    3. $\overline {Var}  _  k=\sum  _  {j=1}^N (y  _  j-\mu  _  k^{<i>})^2P(z=k\mid y=y  _  i;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据，偏离第 $k$ 个模型的均值 $\mu  _  k^{<i>}$ 的平方和。
+    1. $n  _  k=\sum  _  {j=1}^NP(z=k\mid y=y  _  j;\theta^{\ < i \ >})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的数量。         
+    2. $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{\ < i \ >})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的总和。       
+    3. $\overline {Var}  _  k=\sum  _  {j=1}^N (y  _  j-\mu  _  k^{\ < i \ >})^2P(z=k\mid y=y  _  i;\theta^{\ < i \ >})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据，偏离第 $k$ 个模型的均值 $\mu  _  k^{\ < i \ >}$ 的平方和。
                 
 
 ## EM 算法与 kmeans 模型
@@ -507,7 +508,7 @@ $$
 &emsp;&emsp;计算后验概率：
 
 $$
-P(z\mid x,\theta^{<i>})\propto \begin{cases} 1\quad &||x_i-\mathbf {\mu}_ z||_ 2^2=\min_ {1\le k\le K}||x-\mathbf {\mu}_ k^{<i>}||_ 2^2\\ 0\quad &||x_i-\mathbf {\mu}_ z||_ 2^2\gt \min_ {1\le k\le K}||x-\mathbf {\mu}_ k^{<i>}||_ 2^2 \end{cases}
+P(z\mid x,\theta^{\ < i \ >})\propto \begin{cases} 1\quad &||x_i-\mathbf {\mu}_ z||_ 2^2=\min_ {1\le k\le K}||x-\mathbf {\mu}_ k^{\ < i \ >}||_ 2^2\\ 0\quad &||x_i-\mathbf {\mu}_ z||_ 2^2\gt \min_ {1\le k\le K}||x-\mathbf {\mu}_ k^{\ < i \ >}||_ 2^2 \end{cases}
 $$
 
 即：
@@ -517,19 +518,19 @@ $$
 &emsp;&emsp;计算 Q 函数：
 
 $$
- Q(\theta,\theta^{<i>})=\sum_{j=1}^N\left(\sum_z P(z\mid x=x_j;\theta^{<i>})\log P(x=x_j,z;\theta) \right)
+ Q(\theta,\theta^{\ < i \ >})=\sum_{j=1}^N\left(\sum_z P(z\mid x=x_j;\theta^{\ < i \ >})\log P(x=x_j,z;\theta) \right)
 $$
 
-设距离 $x  _  j$ 最近的聚类中心为 $\mathbf{\mu}  _  {t  _  j}^{<i>}$ ，即它属于簇 $t  _  j$ ，则有：
+设距离 $x  _  j$ 最近的聚类中心为 $\mathbf{\mu}  _  {t  _  j}^{\ < i \ >}$ ，即它属于簇 $t  _  j$ ，则有：
 
 $$
-Q(\theta,\theta^{<i>})=\text{const}-\sum_{j=1}^N ||x_j-\mu_{t_j}||_ 2^2
+Q(\theta,\theta^{\ < i \ >})=\text{const}-\sum_{j=1}^N ||x_j-\mu_{t_j}||_ 2^2
 $$
 
 则有：
 
 $$
-\theta^{<i+1>}=\arg\max_\theta Q(\theta,\theta^{<i>})=\arg\min_\theta \sum_{j=1}^N ||x_j-\mu_{t_j}||_ 2^2
+\theta^{\ < i+1 \ >}=\arg\max_\theta Q(\theta,\theta^{\ < i \ >})=\arg\min_\theta \sum_{j=1}^N ||x_j-\mu_{t_j}||_ 2^2
 $$
 
 定义集合 $\mathbb I  _  k=\{j\mid t  _  j=k\},\quad k=1,2\cdots,K$ ，它表示属于簇 $k$ 的样本的下标集合。则有：
@@ -541,7 +542,7 @@ $$
 则有：
 
 $$
- \theta^{<i+1>}=\arg\min_\theta\sum_{k=1}^K\sum_{j\in \mathbb I_k} ||x_j-\mu_k||_ 2^2
+ \theta^{\ < i+1 \ >}=\arg\min_\theta\sum_{k=1}^K\sum_{j\in \mathbb I_k} ||x_j-\mu_k||_ 2^2
 $$
 
 这刚好就是 $k-means$ 算法的目标：最小化平方误差。
@@ -549,10 +550,10 @@ $$
 &emsp;&emsp;由于求和的每一项都是非负的，则当每一个内层求和 $\sum  _  {j\in \mathbb I  _  k}||x  _  j-\mathbf{\mu}  _  {k}||  _  2^2$ 都最小时，总和最小。即：
 
 $$
-\mu^{<i+1>}_ k=\arg\min_{\mu_k}\sum_{j\in \mathbb I_k}||x_j-\mathbf{\mu}_ {k}||_ 2^2
+\mu^{\ < i+1 \ >}_ k=\arg\min_{\mu_k}\sum_{j\in \mathbb I_k}||x_j-\mathbf{\mu}_ {k}||_ 2^2
 $$
 
-得到： $\vec \mu  _  k^{<i+1>}=\frac {1}{|\mathbb I  _  k|}\sum  _  {j \in \mathbb I  _  k}x  _  j$ ，其中 $|\mathbb I  _  k|$ 表示集合 $|\mathbb I  _  k|$ 的大小。这就是求平均值来更新簇中心。
+得到： $\vec \mu  _  k^{\ < i+1 \ >}=\frac {1}{|\mathbb I  _  k|}\sum  _  {j \in \mathbb I  _  k}x  _  j$ ，其中 $|\mathbb I  _  k|$ 表示集合 $|\mathbb I  _  k|$ 的大小。这就是求平均值来更新簇中心。
     
 
 ## EM 算法的推广
@@ -571,16 +572,16 @@ $$
 1. 对固定的 $\theta$ ，存在唯一的分布 $\tilde P  _  {\theta}( Z )$ 使得极大化 $F(\tilde P,\theta)$ 。此时 $\tilde P  _  {\theta}( Z )=P( Z \mid Y;\theta)$ ，并且 $\tilde P  _  {\theta}$ 随着 $\theta$ 连续变化。
 2. 若 $\tilde P  _  {\theta}( Z )=P( Z \mid Y;\theta)$ ， 则 $F(\tilde P,\theta)=\log P( Y;\theta)$ 。
 
-定理一：设 $L(\theta)=\log P(\mathbb Y;\theta)$ 为观测数据的对数似然函数， $\theta^{<i>}$ 为 $EM$ 算法得到的参数估计序列，函数 $F(\tilde P,\theta)=\sum  _  Y\mathbb E  _  {\tilde P}[\log P(Y,Z ;\theta)]+H(\tilde P)$ ，则：
+定理一：设 $L(\theta)=\log P(\mathbb Y;\theta)$ 为观测数据的对数似然函数， $\theta^{\ < i \ >}$ 为 $EM$ 算法得到的参数估计序列，函数 $F(\tilde P,\theta)=\sum  _  Y\mathbb E  _  {\tilde P}[\log P(Y,Z ;\theta)]+H(\tilde P)$ ，则：
 1. 如果 $F(\tilde P,\theta)$ 在 $\tilde P^{ \ * }(Z )$ 和 $\theta^{ \ * }$ 有局部极大值，那么 $L(\theta)$ 也在 $\theta^{ \ * }$ 有局部极大值。
 2. 如果 $F(\tilde P,\theta)$ 在 $\tilde P^{ \ * }( Z )$ 和 $\theta^{ \ * }$ 有全局极大值，那么 $L(\theta)$ 也在 $\theta^{ \ * }$ 有全局极大值。
 
-定理二： $EM$ 算法的一次迭代可由 $F$ 函数的极大-极大算法实现：设 $\theta^{<i>}$ 为第 $i$ 次迭代参数 $\theta$ 的估计， $\tilde P^{<i>}$ 为第 $i$ 次迭代函数 $\tilde P(Z )$ 的估计。在第 $i+1$ 次迭代的两步为：
-1. 对固定的 $\theta^{<i>}$ ，求 $\tilde P^{<i+1>}$ 使得 $F(\tilde P,\theta^{<i>})$ 极大化。
-2. 对固定的 $\tilde P^{<i+1>}$ ，求 $\theta^{<i+1>}$ 使得 $F(\tilde P^{<i+1>},\theta)$ 极大化。
+定理二： $EM$ 算法的一次迭代可由 $F$ 函数的极大-极大算法实现：设 $\theta^{\ < i \ >}$ 为第 $i$ 次迭代参数 $\theta$ 的估计， $\tilde P^{\ < i \ >}$ 为第 $i$ 次迭代函数 $\tilde P(Z )$ 的估计。在第 $i+1$ 次迭代的两步为：
+1. 对固定的 $\theta^{\ < i \ >}$ ，求 $\tilde P^{\ < i+1 \ >}$ 使得 $F(\tilde P,\theta^{\ < i \ >})$ 极大化。
+2. 对固定的 $\tilde P^{\ < i+1 \ >}$ ，求 $\theta^{\ < i+1 \ >}$ 使得 $F(\tilde P^{\ < i+1 \ >},\theta)$ 极大化。
 
 ### GEM算法1
-该算法的问题是，有时候求 $F(\tilde P^{<i+1>},\theta)$ 极大化很困难。
+该算法的问题是，有时候求 $F(\tilde P^{\ < i+1 \ >},\theta)$ 极大化很困难。
 
 #### 伪码
 输入：
@@ -592,12 +593,12 @@ $$
 算法步骤：
 1. 初始化参数 $\theta^{<0>}$ ，开始迭代。
 2. 第 $i+1$ 次迭代：
-    1. 记 $\theta^{<i>}$ 为参数 $\theta$ 的估计值， $\tilde P^{<i>}$ 为函数 $\tilde P$ 的估计值。求 $\tilde P^{<i+1>}$ 使得 $F(\tilde P,\theta^{<i>})$ 极大化。
-    2. 求 $\theta^{<i+1>}$ 使得 $F(\tilde P^{<i+1>},\theta)$ 极大化。
+    1. 记 $\theta^{\ < i \ >}$ 为参数 $\theta$ 的估计值， $\tilde P^{\ < i \ >}$ 为函数 $\tilde P$ 的估计值。求 $\tilde P^{\ < i+1 \ >}$ 使得 $F(\tilde P,\theta^{\ < i \ >})$ 极大化。
+    2. 求 $\theta^{\ < i+1 \ >}$ 使得 $F(\tilde P^{\ < i+1 \ >},\theta)$ 极大化。
     3. 重复上面两步直到收敛。
 
 ### GEM算法2
-此算法不需要求 $Q(\theta,\theta^{<i>})$ 的极大值，只需要求解使它增加的 $\theta^{<i+1>}$ 即可。
+此算法不需要求 $Q(\theta,\theta^{\ < i \ >})$ 的极大值，只需要求解使它增加的 $\theta^{\ < i+1 \ >}$ 即可。
 
 #### 伪码
 输入：
@@ -609,11 +610,11 @@ $$
 算法步骤：
 1. 初始化参数 $\theta^{<0>}$ ，开始迭代。
 2. 第 $i+1$ 次迭代：
-    1. 记 $\theta^{<i>}$ 为参数 $\theta$ 的估计值，计算
+    1. 记 $\theta^{\ < i \ >}$ 为参数 $\theta$ 的估计值，计算
         $$
-        Q(\theta,\theta^{<i>})=\sum_{j=1}^N\left(\sum_Z P(Z\mid Y=y_j;\theta^{<i>})\log P(Y=y_j,Z;\theta) \right)
+        Q(\theta,\theta^{\ < i \ >})=\sum_{j=1}^N\left(\sum_Z P(Z\mid Y=y_j;\theta^{\ < i \ >})\log P(Y=y_j,Z;\theta) \right)
         $$
-    2. 求 $\theta^{<i+1>}$ 使得 $Q(\theta^{<i+1>},\theta^{<i>}) \gt Q(\theta^{<i>},\theta^{<i>})$ 
+    2. 求 $\theta^{\ < i+1 \ >}$ 使得 $Q(\theta^{\ < i+1 \ >},\theta^{\ < i \ >}) \gt Q(\theta^{\ < i \ >},\theta^{\ < i \ >})$ 
     3. 重复上面两步，直到收敛。
 
 
@@ -630,12 +631,12 @@ $$
 算法步骤：
 1. 初始化参数 $\theta^{<0>}=(\theta  _  1^{<0>},\theta  _  2^{<0>},\cdots,\theta  _  d^{<0>})$ ，开始迭代
 2. 第 $i+1$ 次迭代：
-    1. 记 $\theta^{<i>}=(\theta  _  1^{<i>},\theta  _  2^{<i>},\cdots,\theta  _  d^{<i>})$ 为参数 $\theta=(\theta  _  1,\theta  _  2,\cdots,\theta  _  d)$ 的估计值，计算
+    1. 记 $\theta^{\ < i \ >}=(\theta  _  1^{\ < i \ >},\theta  _  2^{\ < i \ >},\cdots,\theta  _  d^{\ < i \ >})$ 为参数 $\theta=(\theta  _  1,\theta  _  2,\cdots,\theta  _  d)$ 的估计值，计算
         $$
-        Q(\theta,\theta^{<i>})=\sum_{j=1}^N\left(\sum_Z P(Z\mid Y=y_j;\theta^{<i>})\log P(Y=y_j,Z;\theta) \right)
+        Q(\theta,\theta^{\ < i \ >})=\sum_{j=1}^N\left(\sum_Z P(Z\mid Y=y_j;\theta^{\ < i \ >})\log P(Y=y_j,Z;\theta) \right)
         $$
     2. 进行 d 次条件极大化：
-        1. 首先在 $\theta  _  2^{<i>},\cdots,\theta\  _  d^{<i>}$ 保持不变的条件下求使得 $Q(\theta,\theta^{<i>})$ 达到极大的 $\theta  _  1^{<i+1>}$ 
-        2. 然后在 $\theta  _  1=\theta  _  1^{<i+1>},\theta  _  j=\theta  _  j^{<i>},j=3,\cdots,d$ 的条件下求使得 $Q(\theta,\theta^{<i>})$ 达到极大的 $\theta  _  2^{<i+1>}$ 
-        3. 如此继续，经过 $d$ 次条件极大化，得到 $\theta^{<i+1>}=(\theta  _  1^{<i+1>},\theta  _  2^{<i+1>},\cdots,\theta  _  d^{<i+1>})$ ，使得 $Q(\theta^{<i+1>},\theta^{<i>}) \gt Q(\theta^{<i>},\theta^{<i>})$ 
+        1. 首先在 $\theta  _  2^{\ < i \ >},\cdots,\theta\  _  d^{\ < i \ >}$ 保持不变的条件下求使得 $Q(\theta,\theta^{\ < i \ >})$ 达到极大的 $\theta  _  1^{\ < i+1 \ >}$ 
+        2. 然后在 $\theta  _  1=\theta  _  1^{\ < i+1 \ >},\theta  _  j=\theta  _  j^{\ < i \ >},j=3,\cdots,d$ 的条件下求使得 $Q(\theta,\theta^{\ < i \ >})$ 达到极大的 $\theta  _  2^{\ < i+1 \ >}$ 
+        3. 如此继续，经过 $d$ 次条件极大化，得到 $\theta^{\ < i+1 \ >}=(\theta  _  1^{\ < i+1 \ >},\theta  _  2^{\ < i+1 \ >},\cdots,\theta  _  d^{\ < i+1 \ >})$ ，使得 $Q(\theta^{\ < i+1 \ >},\theta^{\ < i \ >}) \gt Q(\theta^{\ < i \ >},\theta^{\ < i \ >})$ 
     3. 重复上面两步，直到收敛。
