@@ -458,8 +458,7 @@ $$
     $$
     \mu_k^{\ < i+1 \ >}=\frac{\overline {Sum}_ k}{n_k}
     $$
-
-    其中： $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{\ < i \ >})$  ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$  个分模型的观测数据的总和。
+    其中：$\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{\ < i \ >})$  ，其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第 $k$  个分模型的观测数据的总和。
         
 3.$\sigma^2$ ：
     $$
@@ -493,7 +492,7 @@ $$
 \min_{C} \sum_{k=1}^{K}\sum_{x_i \in \mathbb C_k}||x_i-\mu_k||_ 2^{2}
 $$
 
-其中 $\mu  _  k=\frac {1}{|\mathbb C  _  k|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$ 是簇 $\mathbb C  _  k$ 的均值向量。
+其中 $\mu  _  k=\frac {1}{\|\mathbb C  _  k\|}\sum  _  {x  _  i \in \mathbb C  _  k}x  _  i$ 是簇 $\mathbb C  _  k$ 的均值向量。
     
 &emsp;&emsp;定义观测随机变量为 $x$ ，观测数据为 $\mathbb D$ 。定义隐变量为 $z$ ，它表示 $x$ 所属的簇的编号。设参数 $\theta= (\mathbf {\mu}  _  1,\mathbf {\mu}  _  2,\cdots,\mathbf {\mu}  _  K)$ ，则考虑如下的生成模型：
 
@@ -501,8 +500,8 @@ $$
 P(x,z\mid\theta) \propto \begin{cases}\exp(-||x-\mathbf {\mu}_ z||_ 2^2)\quad &||x-\mathbf {\mu}_z||_2^2=\min_ {1\le k\le K}||x-\mathbf {\mu}_ k||_ 2^2\\ 0\quad &||x-\mathbf {\mu}_ z||_ 2^2\gt \min_ {1\le k\le K}||x-\mathbf {\mu}_ k||_ 2^2 \end{cases}
 $$
 
-其中 $\min  _  {1\le k\le K}||x-\mathbf {\mu}  _  k||  _  2^2$ 表示距离 $\mathbf{\vec x}$ 最近的中心点所在的簇编号。即：
-1. 若 $x$ 最近的簇就是 $\mathbf{\mu}  _  z$ 代表的簇，则生成概率为 $\exp(-||x-\mathbf {\mu}  _  z||  _  2^2)$ 。
+其中 $\min  _  {1\le k\le K}\|\|x-\mathbf {\mu}  _  k\|\|  _  2^2$ 表示距离 $\mathbf{\vec x}$ 最近的中心点所在的簇编号。即：
+1. 若 $x$ 最近的簇就是 $\mathbf{\mu}  _  z$ 代表的簇，则生成概率为 $\exp(-\|\|x-\mathbf {\mu}  _  z\|\|  _  2^2)$ 。
 2. 若 $x$ 最近的簇不是 $\mathbf{\mu}  _  z$ 代表的簇，则生成概率等于 $0$ 。
 
 &emsp;&emsp;计算后验概率：
@@ -547,13 +546,13 @@ $$
 
 这刚好就是 $k-means$ 算法的目标：最小化平方误差。
     
-&emsp;&emsp;由于求和的每一项都是非负的，则当每一个内层求和 $\sum  _  {j\in \mathbb I  _  k}||x  _  j-\mathbf{\mu}  _  {k}||  _  2^2$ 都最小时，总和最小。即：
+&emsp;&emsp;由于求和的每一项都是非负的，则当每一个内层求和 $\sum  _  {j\in \mathbb I  _  k}\|\|x  _  j-\mathbf{\mu}  _  {k}\|\|  _  2^2$ 都最小时，总和最小。即：
 
 $$
 \mu^{\ < i+1 \ >}_ k=\arg\min_{\mu_k}\sum_{j\in \mathbb I_k}||x_j-\mathbf{\mu}_ {k}||_ 2^2
 $$
 
-得到： $\vec \mu  _  k^{\ < i+1 \ >}=\frac {1}{|\mathbb I  _  k|}\sum  _  {j \in \mathbb I  _  k}x  _  j$ ，其中 $|\mathbb I  _  k|$ 表示集合 $|\mathbb I  _  k|$ 的大小。这就是求平均值来更新簇中心。
+得到： $\vec \mu  _  k^{\ < i+1 \ >}=\frac {1}{\|\mathbb I  _  k\|}\sum  _  {j \in \mathbb I  _  k}x  _  j$ ，其中 $\|\mathbb I  _  k\|$ 表示集合 $\|\mathbb I  _  k\|$ 的大小。这就是求平均值来更新簇中心。
     
 
 ## EM 算法的推广
