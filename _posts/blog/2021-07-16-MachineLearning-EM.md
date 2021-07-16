@@ -53,7 +53,7 @@ $$
 &emsp;&emsp;为解决该问题，通常采取下面步骤：
 1. 先假定参数的初始值： $\{\mu  _  1^{<0>},\sigma  _  1^{2<0>},\mu  _  2^{<0>},\sigma  _  2^{2<0>}\}$ 。
 2. 迭代： $i=0,1,\cdots$ 
-    1. 根据 $\{\mu  _  1^{<i>},\sigma  _  1^{2<i>},\mu  _  2^{<i>},\sigma  _  2^{2<i>}\}$ 来计算每个学生更可能是属于男生，还是属于女生。
+    1. 根据 $\{\mu  _  1^{ \< i \>},\sigma  _  1^{2 \< i \>},\mu  _  2^{ \< i \>},\sigma  _  2^{2 \< i \>}\}$ 来计算每个学生更可能是属于男生，还是属于女生。
         > 这一步为 $E$  步（ $Expectation$ ），用于计算隐变量的后验分布 $p(z\mid x)$ 。
     2. 根据上一步的划分，统计所有男生的身高的均值和方差，得到 $\{\mu  _  1^{<i+1>},\sigma  _  1^{2<i+1>}\}$；统计所有女生的身高的均值和方差，得到 $\{\mu  _  2^{\<i+1\>},\sigma  _  2^{2\<i+1\>}\}$ 。
         > 这一步为 $M$ 步（$Maximization$），用于通过最大似然函数求解正态分布的参数。
@@ -99,14 +99,14 @@ $$
 
 然后通过下面的步骤迭代计算参数的估计值，直到收敛为止：
 
-设第 $i$ 次迭代参数的估计值为： $\theta^{<i>}=(\pi^{<i>},p^{<i>},q^{<i>})$ ， 则 $EM$ 算法的第 $ i+1 $ 次迭代如下：
-1.  $E$ 步：计算模型在参数 $\theta^{<i>}=(\pi^{<i>},p^{<i>},q^{<i>})$ 下，观测数据 $y  _  j$ 来自于投掷硬币 $B$ 的概率：
+设第 $i$ 次迭代参数的估计值为： $\theta^{\<i\>}=(\pi^{\<i\>},p^{\<i\>},q^{\<i\>})$ ， 则 $EM$ 算法的第 $ i+1 $ 次迭代如下：
+1. $E$ 步：计算模型在参数 $\theta^{<i>}=(\pi^{<i>},p^{<i>},q^{<i>})$ 下，观测数据 $y  _  j$ 来自于投掷硬币 $B$ 的概率：
     $$
-    \mu^{\<i+1\>}_ j=\frac{\pi^{<i>}(p^{<i>})^{y_j}(1-p^{<i>})^{1-y_j}}{\pi^{<i>}(p^{<i>})^{y_j}(1-p^{<i>})^{1-y_j}+(1-\pi^{<i>})(q^{<i>})^{y_j}(1-q^{<i>})^{1-y_j}}
+    \mu^{<i+1>}_ j=\frac{\pi^{<i>}(p^{<i>})^{y_j}(1-p^{<i>})^{1-y_j}}{\pi^{<i>}(p^{<i>})^{y_j}(1-p^{<i>})^{1-y_j}+(1-\pi^{<i>})(q^{<i>})^{y_j}(1-q^{<i>})^{1-y_j}}
     $$
     它其实就是 $P(Z=1\mid Y=y  _  j)$ ，即：已知观测变量 $Y=y  _  j$ 的条件下，观测数据 $y  _  j$  来自于投掷硬币 $B$  的概率。
         
-2. `M` 步：计算模型参数的新估计值：
+2. $M$ 步：计算模型参数的新估计值：
     $$
     \begin{aligned}
     	\pi ^{<i+1>}&=\frac{1}{N}\sum_ {j=1}^N{\mu _ {j}^{<i+1>}}\\
@@ -120,15 +120,15 @@ $$
 
 ####  $EM$  算法的解释
 1. 初始化：随机选择三枚硬币 $A$ ， $B$ ， $C$  正面出现的概率 $\pi,p,q$ 的初始值  $\pi^{<0>},p^{<0>},q^{<0>}$ 。
-2.  $E$  步：在已知概率 $\pi,p,q$ 的情况下，求出每个观测数据 $y  _  j$  是来自于投掷硬币 $B$ 的概率。即：
+2. $E$  步：在已知概率 $\pi,p,q$ 的情况下，求出每个观测数据 $y  _  j$  是来自于投掷硬币 $B$ 的概率。即：
     $$
     p(z_j\mid y_j=1) 
     $$    
     于是对于 $N$ 次实验，就知道哪些观测数据是由硬币 $B$ 产生，哪些是由硬币 $C$  产生。
 3.  $M$  步：在已知哪些观测数据是由硬币 $B$ 产生，哪些是由硬币 $C$ 产生的情况下：
-    1.  $\pi$ 就等于硬币 $B$ 产生的次数的频率。
-    2.  $p$ 就等于硬币 $B$ 产生的数据中，正面向上的频率。
-    3.  $q$ 就等于硬币 $C$ 产生的数据中，正面向上的频率。
+    1. $\pi$ 就等于硬币 $B$ 产生的次数的频率。
+    2. $p$ 就等于硬币 $B$ 产生的数据中，正面向上的频率。
+    3. $q$ 就等于硬币 $C$ 产生的数据中，正面向上的频率。
 
 ## EM算法
 
@@ -188,7 +188,7 @@ $$
 
 
 ### EM原理
-&emsp;&emsp;给定的训练样本是 $\left\{ x^{\left( 1 \right)},\cdots ,x^{\left( m \right)} \right\} $ ，我们想找到每个样例隐含的类别 $z$ ，能使得 $p(x,z)$ 最大。 $p(x,z)$ 的最大似然估计如下：
+&emsp;&emsp;给定的训练样本是 $\{ x^{\left( 1 \right)},\cdots ,x^{\left( m \right)} \} $ ，我们想找到每个样例隐含的类别 $z$ ，能使得 $p(x,z)$ 最大。 $p(x,z)$ 的最大似然估计如下：
 
 $$
 \begin{aligned}
@@ -221,11 +221,11 @@ $$
 
 ***
 设 $Y$ 是随机变量 $X$ 的函数, $Y=g\left( x \right) $ （ $g$ 是连续函数），那么
-1.  $X$ 是离散型随机变量，它的分布律为 $P\left( X=x  _  k \right) =p  _  k,k=1,2,...$ 。若 $\sum  _  {k=1}^{\infty}{g\left( x  _  k \right) p  _  k}$ 绝对收敛，则有
+1. $X$ 是离散型随机变量，它的分布律为 $P\left( X=x  _  k \right) =p  _  k,k=1,2,...$ 。若 $\sum  _  {k=1}^{\infty}{g\left( x  _  k \right) p  _  k}$ 绝对收敛，则有
     $$
     E\left( Y \right) =E\left[ g\left( X \right) \right] =\sum_{k=1}^{\infty}{g\left( x_k \right) p_k}
     $$
-2.  $X$ 是连续型随机变量，它的概率密度为 $f\left( x \right) $ ，若 $\int  _  {-\infty}^{\infty}{g\left( x \right)}f\left( x \right) dx$ 绝对收敛，则有
+2. $X$ 是连续型随机变量，它的概率密度为 $f\left( x \right) $ ，若 $\int  _  {-\infty}^{\infty}{g\left( x \right)}f\left( x \right) dx$ 绝对收敛，则有
     $$
     E\left( Y \right) =E\left[ g\left( X \right) \right] = \int_{-\infty}^{\infty}{g\left( x \right)}f\left( x \right) dx
     $$
@@ -256,6 +256,7 @@ $$
 $$
 
 &emsp;&emsp;至此，我们推出了在固定其他参数 $\theta$ 后， $Q  _  i\left( z^{\left( i \right)} \right)$ 的计算公式就是后验概率，解决了 $Q  _  i\left( z^{\left( i \right)} \right)$ 如何选择的问题。这一步就是 $E$ 步，建立 $ l\left( \theta \right) $ 的下界。接下来的M步，就是在给定 $Q  _  i\left( z^{\left( i \right)} \right)$ 后，调整 $\theta$ ，去极大化 $ l\left( \theta \right) $ 的下界（在固定 $Q  _  i\left( z^{\left( i \right)} \right)$ 后，下界还可以调整的更大）。那么一般的 $EM$ 算法的步骤如下：
+
 ***
 循环重复直到收敛 
 
@@ -270,6 +271,7 @@ $M$ 步：计算
 $$
 \theta =arg\underset{\theta}{\max}\sum_i{\sum_{z^{\left( i \right)}}{Q_i\left( z^{\left( i \right)} \right) \log \frac{p\left( x^{\left( i \right)},z^{\left( i \right)};\theta \right)}{Q_i\left( z^{\left( i \right)} \right)}}}
 $$
+
 ***
 
 &emsp;&emsp;那么究竟怎么确保 $EM$ 收敛？假定 $\theta ^{\left( t \right)}$ 和 $\theta ^{\left( t+1 \right)}$ 是 $EM$ 第 $t$ 次和 $t+1$ 次迭代后的结果。如果我们证明了 $l\left( \theta ^{\left( t \right)} \right) \le l\left( \theta ^{\left( t+1 \right)} \right) $ ，也就是说极大似然估计单调增加，那么最终我们会到达最大似然估计的最大值。下面来证明，选定 $\theta ^{\left( t \right)}$ 后，我们得到 $E$ 步:
@@ -325,22 +327,23 @@ $$
 
 算法步骤：
 1. 选择参数的初值 $\theta^{<0> }$ ，开始迭代。
-2.  $E$ 步：记 $\theta^{<i>}$ 为第 $i$ 次迭代参数 $\theta$ 的估计值，在第 $i+1$  次迭代的 $E$ 步，计算：
+2. $E$ 步：记 $\theta^{<i>}$ 为第 $i$ 次迭代参数 $\theta$ 的估计值，在第 $i+1$  次迭代的 $E$ 步，计算：
     $$
     \begin{aligned}
-    	Q\left( \theta ,\theta ^{<i>} \right) &=\sum_{j=1}^N{\mathbb{E}_{P\left( Z|Y=y_j;\theta ^{<i>} \right)}\log P\left( Y=y_j,Z;\theta \right)}\\
-    	&=\sum_{j=1}^N{\left( \sum_Z{P\left( Z|Y=y_j;\theta ^{<i>} \right) \log P\left( Y=y_{j,}Z;\theta \right)} \right)}\\
+    	Q\left( \theta ,\theta ^{<i>} \right) &=\sum_{j=1}^N{\mathbb{E}_ {P\left( Z|Y=y_j;\theta ^{<i>} \right)}\log P\left( Y=y_j,Z;\theta \right)}\\
+    	&=\sum_ {j=1}^N{\left( \sum_Z{P\left( Z|Y=y_j;\theta ^{<i>} \right) \log P\left( Y=y_{j,}Z;\theta \right)} \right)}
     \end{aligned}
     $$
-    其中 $\mathbb E  _  {P(Z\mid Y=y  _  j;\theta^{<i>})}\log P(Y=y  _  j,Z ;\theta)$ 表示：对于观测点 $Y=y  _  j$ ， $\log P(Y=y  _  j,Z ;\theta)$ 关于后验概率 $P(Z\mid Y=y  _  j;\theta^{<i>})$ 的期望。
-3.  $M$ 步：求使得 $Q(\theta,\theta^{<i>})$ 最大化的 $\theta$ ，确定 $i+1$  次迭代的参数的估计值 $\theta^{<i+1>}$ 
+    
+    其中 $\mathbb E  _  {P(Z\mid Y=y  _  j;\theta^{ \< i \> })}\log P(Y=y  _  j,Z ;\theta)$ 表示：对于观测点 $Y=y  _  j$ ， $\log P(Y=y  _  j,Z ;\theta)$ 关于后验概率 $P(Z\mid Y=y  _  j;\theta^{<i>})$ 的期望。
+3. $M$ 步：求使得 $Q(\theta,\theta^{ \< i \>})$ 最大化的 $\theta$ ，确定 $i+1$  次迭代的参数的估计值 $\theta^{ \< i+1 \> }$ 
     $$
     \theta^{<i+1>}=\arg\max_\theta Q(\theta,\theta^{<i>})
     $$
 4. 重复上面两步，直到收敛。
 
 ### 收敛
-通常收敛的条件是：给定较小的正数  $\varepsilon  _  1,\varepsilon  _  2$ ，满足： $||\theta^{<i+1>}-\theta^{<i>}|| \lt \varepsilon  _  1$ 或者 $||Q(\theta^{<i+1>},\theta^{<i>})-Q(\theta^{<i>},\theta^{<i>})|| \lt \varepsilon  _  2$ 。
+通常收敛的条件是：给定较小的正数  $\varepsilon  _  1,\varepsilon  _  2$ ，满足： $\|\|\theta^{<i+1>}-\theta^{<i>}\|\| \lt \varepsilon  _  1$ 或者 $\|\|Q(\theta^{<i+1>},\theta^{<i>})-Q(\theta^{<i>},\theta^{<i>})\|\| \lt \varepsilon  _  2$ 。
 
 ### 核心    
 $Q(\theta,\theta^{<i>})$ 是算法的核心，称作 $Q$ 函数。其中：
@@ -354,21 +357,22 @@ $Q(\theta,\theta^{<i>})$ 是算法的核心，称作 $Q$ 函数。其中：
 &emsp;&emsp; $EM$ 算法试图多次猜测这个未观测数据的分布 $P(Z \mid Y;\theta)$ 。每一轮迭代都猜测一个参数值  $\theta^{<i>}$ ，该参数值都对应着一个未观测数据的分布 $ P(Z \mid Y;\theta^{<i>})$ 。如：已知身高分布的条件下，男生或女生的分布。
 
 &emsp;&emsp;然后通过最大化某个变量来求解参数值。这个变量就是 $B(\theta,\theta^{<i>})$  变量，它是真实的似然函数的下界 。  
-1. 如果猜测正确，则 B 就是真实的似然函数。
-2. 如果猜测不正确，则 B 就是真实似然函数的一个下界。
+1. 如果猜测正确，则 $B$ 就是真实的似然函数。
+2. 如果猜测不正确，则 $B$ 就是真实似然函数的一个下界。
 
 ### 隐变量求解
 &emsp;&emsp;隐变量估计问题也可以通过梯度下降法等算法求解，但由于求和的项数随着隐变量的数目以指数级上升，因此代价太大。 $EM$ 算法可以视作一个非梯度优化算法。无论是梯度下降法，还是 $EM$ 算法，都容易陷入局部极小值。
 
 ### 收敛性定理
 
-**定理一**：设 $P(\mathbb Y;\theta)$ 为观测数据的似然函数， $\theta^{<i>}$  为 $EM$ 算法得到的参数估计序列， $P(\mathbb Y;\theta^{<i>})$  为对应的似然函数序列，其中 $i=1,2,\cdots$ 。则： $P(\mathbb Y;\theta^{<i>})$  是单调递增的，即：
+定理一：设 $P(\mathbb Y;\theta)$ 为观测数据的似然函数， $\theta^{ \< i \>}$  为 $EM$ 算法得到的参数估计序列， $P(\mathbb Y;\theta^{ \< i \>})$  为对应的似然函数序列，其中 $i=1,2,\cdots$ 。则： $P(\mathbb Y;\theta^{\< i \>})$  是单调递增的，即：
+
 $$
 P(\mathbb Y;\theta^{<i+1>}) \ge P(\mathbb Y;\theta^{<i>}) 
 $$
 
     
-**定理二**：设 $L(\theta)=\log P(\mathbb Y;\theta)$ 为观测数据的对数似然函数，  $\theta^{<i>}$ 为 $EM$ 算法得到的参数估计序列， $L(\theta^{<i>})$  为对应的对数似然函数序列，其中 $i=1,2,\cdots$ 。
+定理二：设 $L(\theta)=\log P(\mathbb Y;\theta)$ 为观测数据的对数似然函数，  $\theta^{<i>}$ 为 $EM$ 算法得到的参数估计序列， $L(\theta^{<i>})$  为对应的对数似然函数序列，其中 $i=1,2,\cdots$ 。
 1. 如果 $P(\mathbb Y;\theta)$ 有上界，则 $L(\theta^{<i>})$ 会收敛到某一个值 $L^{ \ * }$ 。
 2. 在函数 $Q(\theta,\theta^{<i>})$ 与 $L(\theta)$ 满足一定条件下，由 $EM$  算法得到的参数估计序列 $\theta^{<i>}$ 的收敛值 $\theta^{ \ * }$ 是 $L(\theta)$  的稳定点。
 > 关于 “满足一定条件”：大多数条件下其实都是满足的。
@@ -396,8 +400,8 @@ $$
 P(y;\theta)=\sum_{k=1}^{K}\alpha_k\phi(y;\theta_k)
 $$    
 其中 $\alpha  _  k$ 是系数，满足 ：
-1.  $\alpha  _  k \ge 0,\sum  _  {k=1}^K \alpha  _  k=1$ 。
-2.  $\phi(y;\theta  _  k)$ 是高斯分布密度函数，称作第 $k$ 个分模型， $\theta  _  k=(\mu  _  k,\sigma  _  k^{2})$ ：
+1. $\alpha  _  k \ge 0,\sum  _  {k=1}^K \alpha  _  k=1$ 。
+2. $\phi(y;\theta  _  k)$ 是高斯分布密度函数，称作第 $k$ 个分模型， $\theta  _  k=(\mu  _  k,\sigma  _  k^{2})$ ：
     $$
     \phi(y;\theta_k)=\frac{1}{\sqrt{2\pi}\sigma_k}\exp\left(-\frac{(y-\mu_k)^{2}}{2\sigma_k^{2}}\right)
     $$
@@ -476,9 +480,9 @@ $$
     \alpha_k^{<i+1>}=\frac{n_k}{N},\;\mu_k^{<i+1>}=\frac{\overline {Sum}_ k}{n_k},\;\sigma_k^{<i+1>2}=\frac{\overline {Var}_ k}{n_k}
     $$
     其中：
-    1.  $n  _  k=\sum  _  {j=1}^NP(z=k\mid y=y  _  j;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的数量。         
-    2.  $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的总和。       
-    3.  $\overline {Var}  _  k=\sum  _  {j=1}^N (y  _  j-\mu  _  k^{<i>})^2P(z=k\mid y=y  _  i;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据，偏离第 $k$ 个模型的均值 $\mu  _  k^{<i>}$ 的平方和。
+    1. $n  _  k=\sum  _  {j=1}^NP(z=k\mid y=y  _  j;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的数量。         
+    2. $\overline {Sum}  _  k=\sum  _  {j=1}^N y  _  j P(z=k\mid y=y  _  j;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据的总和。       
+    3. $\overline {Var}  _  k=\sum  _  {j=1}^N (y  _  j-\mu  _  k^{<i>})^2P(z=k\mid y=y  _  i;\theta^{<i>})$ 。其物理意义为：所有的观测数据 $\mathbb Y$ 中，产生自第  $k$ 个分模型的观测数据，偏离第 $k$ 个模型的均值 $\mu  _  k^{<i>}$ 的平方和。
                 
 
 ## EM 算法与 kmeans 模型
@@ -581,7 +585,7 @@ $$
 #### 伪码
 输入：
 1. 观测数据 $\mathbb Y=\{y  _  1,y  _  2,\cdots\}$ 
-2.  $F$ 函数
+2. $F$ 函数
 
 输出：模型参数
 
@@ -598,7 +602,7 @@ $$
 #### 伪码
 输入：
 1. 观测数据 $\mathbb Y=\{y  _  1,y  _  2,\cdots\}$ 
-2.  $Q$ 函数
+2. $Q$ 函数
 
 输出：模型参数
 
@@ -619,7 +623,7 @@ $$
 #### 伪码
 输入：
 1. 观测数据 $\mathbb Y=\{y  _  1,y  _  2,\cdots\}$ 
-2.  $Q$ 函数
+2. $Q$ 函数
 
 输出：模型参数
 
