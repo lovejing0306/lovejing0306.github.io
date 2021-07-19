@@ -19,7 +19,7 @@ keywords: MachineLearning
 3. 序列的每一个位置又可以看作是一个时刻。
 
 ### 基本概念
-&emsp;&emsp;设 $\mathbb Q={ {\mathbf q}  _  1,{\mathbf q}  _  2,\cdots,{\mathbf q}  _  Q}$ 是所有可能的状态的集合， $\mathbb V={{\mathbf v}  _  1,{\mathbf v}  _  2,\cdots,{\mathbf v}  _  V }$ 是所有可能的观测的集合，其中 $Q$ 是可能的状态数量， $V$  是可能的观测数量； $\mathbb Q$ 是状态的取值空间， $\mathbb V$ 是观测的取值空间；每个观测值 ${\mathbf v}  _  i$ 可能是标量，也可能是一组标量构成的集合，因此这里用加粗的黑体表示。状态值的表示也类似。
+&emsp;&emsp;设 $\mathbb Q={ {\mathbf q}  _  1,{\mathbf q}  _  2,\cdots,{\mathbf q}  _  Q}$ 是所有可能的状态的集合， $\mathbb V={ {\mathbf v}  _  1,{\mathbf v}  _  2,\cdots,{\mathbf v}  _  V }$ 是所有可能的观测的集合，其中 $Q$ 是可能的状态数量， $V$  是可能的观测数量； $\mathbb Q$ 是状态的取值空间， $\mathbb V$ 是观测的取值空间；每个观测值 ${\mathbf v}  _  i$ 可能是标量，也可能是一组标量构成的集合，因此这里用加粗的黑体表示。状态值的表示也类似。
 
 &emsp;&emsp;设 $\mathbf I=( i  _  1,i  _  2,\cdots,i  _  T)$ 是长度为 $T$ 的状态序列， $\mathbf O=(o  _  1,o  _  2,\cdots,o  _  T)$ 是对应的观测序列。其中， $i  _  t\in\{1,\cdots,Q\}$ 是一个随机变量，代表状态 $\mathbf q  _  {i  _  t}$ ； $o  _  t\in\{1,\cdots,V\}$  是一个随机变量，代表观测 $\mathbf v  _  {o  _  t}$ 。
 
