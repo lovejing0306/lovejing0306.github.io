@@ -82,25 +82,25 @@ $$
 状态序列 $\mathbf I=({i}  _  1,{i}  _  2,\cdots,{i}  _  T)$ 的概率为：
 
 $$
-P(\mathbf I;\lambda)=\pi_{{i}_ 1}a_{{i}_ 1,{i}_ 2}a_{{i}_ 2,{i}_ 3}\cdots a_ {{i}_ {T-1},{i}_ T}
+P(\mathbf I;\lambda)=\pi_{ {i}_ 1}a_{ {i}_ 1,{i}_ 2}a_{ {i}_ 2,{i}_ 3}\cdots a_ { {i}_ {T-1},{i}_ T}
 $$
 
 给定状态序列 $\mathbf I=({i}  _  1,{i}  _  2,\cdots,{i}  _  T)$ ，观测序列 $\mathbf O=({o}  _  1,{o}  _  2,\cdots,{o}  _  T)$ 的条件概率为：
 
 $$
-P(\mathbf O\mid \mathbf I;\lambda)=b_{{i}_ 1}({o}_ 1)b_{{i}_ 2}({o}_ 2)\cdots b_{{i}_ T}({o}_ T)
+P(\mathbf O\mid \mathbf I;\lambda)=b_{ {i}_ 1}({o}_ 1)b_{ {i}_ 2}({o}_ 2)\cdots b_{ {i}_ T}({o}_ T)
 $$
 
 $\mathbf O$ 和 $\mathbf I$ 同时出现的联合概率为：
 
 $$
-P(\mathbf O,\mathbf I;\lambda)=P(\mathbf O\mid \mathbf I;\lambda)P(\mathbf I;\lambda)=\pi_{{i}_ 1}a_{{i}_ 1,{i}_ 2}a_{{i}_ 2,{i}_ 3}\cdots a_{{i}_ {T-1},{i}_ T}b_{{i}_ 1}({o}_ 1)b_{{i}_ 2}({o}_ 2)\cdots b_{{i}_ T}({o}_ T)
+P(\mathbf O,\mathbf I;\lambda)=P(\mathbf O\mid \mathbf I;\lambda)P(\mathbf I;\lambda)=\pi_{ {i}_ 1}a_{ {i}_ 1,{i}_ 2}a_{ {i}_ 2,{i}_ 3}\cdots a_{ {i}_ {T-1},{i}_ T}b_{ {i}_ 1}({o}_ 1)b_{ {i}_ 2}({o}_ 2)\cdots b_{ {i}_ T}({o}_ T)
 $$
 
 对所有可能的状态序列 $\mathbf I$ 求和，得到观测序列 $\mathbf O$ 的概率：
 
 $$
-P(\mathbf O;\lambda)=\sum_{\mathbf I} P(\mathbf O,\mathbf I;\lambda)=\sum_{{i}_ 1,{i}_ 2,\cdots,{i}_ T} \pi_{{i}_ 1}a_{{i}_ 1,{i}_ 2}a_{{i}_ 2,{i}_ 3}\cdots a_{{i}_ {T-1},{i}_ T}b_{{i}_ 1}({o}_ 1)b_{{i}_ 2}({o}_ 2)\cdots b_{{i}_ T}({o}_ T)
+P(\mathbf O;\lambda)=\sum_{\mathbf I} P(\mathbf O,\mathbf I;\lambda)=\sum_{ {i}_ 1,{i}_ 2,\cdots,{i}_ T} \pi_{ {i}_ 1}a_{ {i}_ 1,{i}_ 2}a_{ {i}_ 2,{i}_ 3}\cdots a_{ {i}_ {T-1},{i}_ T}b_{ {i}_ 1}({o}_ 1)b_{ {i}_ 2}({o}_ 2)\cdots b_{ {i}_ T}({o}_ T)
 $$
 
 上式的算法复杂度为 $O(T\times Q^{T})$ ，太复杂，实际应用中不太可行。
@@ -310,11 +310,11 @@ $$
 可以利用极大似然估计来估计隐马尔可夫模型的参数。
 1. 转移概率 $a  _  {i,j}$ 的估计：设样本中前一时刻处于状态 $i$ 、且后一时刻处于状态 $j$ 的频数为 $A  _  {i,j}$ ，则状态转移概率 $a  _  {i,j}$ 的估计是：
     $$
-    \hat a_{i,j}=\frac{A_{i,j}}{\sum_{u=1}^{Q}A_{i,u}} ,\quad i=1,2,\cdots,Q;j=1,2,\cdots,Q
+    \hat a_{i,j}=\frac{A_{i,j} }{\sum_{u=1}^{Q}A_{i,u} } ,\quad i=1,2,\cdots,Q;j=1,2,\cdots,Q
     $$
 2. 观测概率 $b  _  j(k)$ 的估计：设样本中状态为 $j$ 并且观测为 $k$ 的频数为 $B  _  {j,k}$ ，则状态为 $j$ 并且观测为 $k$ 的概率 $b  _  j(k)$ 的估计为：
     $$
-     \hat b_j(k)=\frac{B_{j,k}}{\sum_{v=1}^{V}B_{j,v}},\quad j=1,2,\cdots,Q;k=1,2,\cdots,V
+     \hat b_j(k)=\frac{B_{j,k} }{\sum_{v=1}^{V}B_{j,v} },\quad j=1,2,\cdots,Q;k=1,2,\cdots,V
     $$
 3. 初始状态概率的估计：设样本中初始时刻（即： $t=1$  ）处于状态 $i$ 的频数为 $C  _  i$ ，则初始状态概率 $\pi  _  i$ 的估计为：
     $$
@@ -351,10 +351,10 @@ $$
 在给定参数 $\bar\lambda$ 时， $P(\mathbf I,\mathbf O=\mathbf O  _  j;\bar\lambda)$ 是 $\mathbf I$ 的函数，记做 $\tilde P  _  j(\mathbf I)$ 。
         
 
-根据 $P(\mathbf O,\mathbf I;\lambda)=\pi  _  {{i}  _  1}b  _  {{i}  _  1}({o}  _  1)a  _  {{i}  _  1,{i}  _  2}b  _  {{i}  _  2}({o}  _  2)\cdots a  _  {{i}  _  {T-1},{i}  _  T}b  _  {{i}  _  T}({o}  _  T)$ 得到：
+根据 $P(\mathbf O,\mathbf I;\lambda)=\pi  _  { {i}  _  1}b  _  { {i}  _  1}({o}  _  1)a  _  { {i}  _  1,{i}  _  2}b  _  { {i}  _  2}({o}  _  2)\cdots a  _  { {i}  _  {T-1},{i}  _  T}b  _  { {i}  _  T}({o}  _  T)$ 得到：
 
 $$
- Q(\lambda,\bar \lambda)=\sum_{j=1}^N\frac{1}{\tilde P_j}\left(\sum_{\mathbf I }(\log \pi_{{i}_ 1})\tilde P_j(\mathbf I)+\sum_{\mathbf I}\left(\sum_{t=1}^{T_j-1}\log a_{i_t,i_{t+1}}\right)\tilde P_j(\mathbf I)\ +\sum_{\mathbf I}\left(\sum_{t=1}^{T_j}\log b_{{i}_ t}({o}_ t^{(j)})\right)\tilde P_j(\mathbf I)\right)
+ Q(\lambda,\bar \lambda)=\sum_{j=1}^N\frac{1}{\tilde P_j}\left(\sum_{\mathbf I }(\log \pi_{ {i}_ 1})\tilde P_j(\mathbf I)+\sum_{\mathbf I}\left(\sum_{t=1}^{T_j-1}\log a_{i_t,i_{t+1} }\right)\tilde P_j(\mathbf I)\ +\sum_{\mathbf I}\left(\sum_{t=1}^{T_j}\log b_{ {i}_ t}({o}_ t^{(j)})\right)\tilde P_j(\mathbf I)\right)
 $$
 
 其中：$T  _  j$ 表示第 $j$ 个序列的长度， $o  _  t^{(j)}$ 表示第 $j$ 个观测序列的第 $t$ 个位置。
@@ -371,8 +371,8 @@ $$
 
 $$
 \begin{aligned}
- \frac{\partial Q(\lambda,\bar\lambda)}{\partial \pi_i}=\frac{\partial (\sum_{j=1}^N\frac{1}{\tilde P_j}\sum_{\mathbf I }(\log \pi_{{i}_1})\tilde P_j(\mathbf I))}{\partial \pi_i}\\ 
- =\sum_{j=1}^N\frac{1}{\tilde P_j} \sum_{i_1=1}^Q P(i_1,\mathbf O=\mathbf O_j;\bar\lambda)\frac{\partial\log \pi_{i_1}}{\partial \pi_i}
+ \frac{\partial Q(\lambda,\bar\lambda)}{\partial \pi_i}=\frac{\partial (\sum_{j=1}^N\frac{1}{\tilde P_j}\sum_{\mathbf I }(\log \pi_{ {i}_1})\tilde P_j(\mathbf I))}{\partial \pi_i}\\ 
+ =\sum_{j=1}^N\frac{1}{\tilde P_j} \sum_{i_1=1}^Q P(i_1,\mathbf O=\mathbf O_j;\bar\lambda)\frac{\partial\log \pi_{i_1} }{\partial \pi_i}
  \end{aligned}
 $$
 
@@ -396,10 +396,10 @@ $$
 
 其物理意义为：统计在给定参数 $\bar\lambda$ ，已知 $\mathbf O=\mathbf O  _  j$ 的条件下 $i  _  1=i$ 的出现的频率。它就是 $i  _  1=i$ 的后验概率的估计值。
             
-&emsp;&emsp; $\frac{\partial Q(\lambda,\bar\lambda)}{\partial a  _  {i,j}}=0$ ：同样的处理有：
+&emsp;&emsp; $\frac{\partial Q(\lambda,\bar\lambda)}{\partial a  _  {i,j} }=0$ ：同样的处理有：
 
 $$
-\frac{\partial Q(\lambda,\bar\lambda)}{\partial a_{i,j}}=\sum_{k=1}^N\frac{1}{\tilde P_k}\sum_{t=1}^{T_k-1}\left(\frac{P(i_t=i,i_{t+1}=j,\mathbf O=\mathbf O_k;\bar\lambda)}{a_{i,j}}-\frac{P(i_t=i,i_{t+1}=Q,\mathbf O=\mathbf O_k;\bar\lambda)}{a_{i,Q}}\right)
+\frac{\partial Q(\lambda,\bar\lambda)}{\partial a_{i,j} }=\sum_{k=1}^N\frac{1}{\tilde P_k}\sum_{t=1}^{T_k-1}\left(\frac{P(i_t=i,i_{t+1}=j,\mathbf O=\mathbf O_k;\bar\lambda)}{a_{i,j} }-\frac{P(i_t=i,i_{t+1}=Q,\mathbf O=\mathbf O_k;\bar\lambda)}{a_{i,Q} }\right)
 $$
 
 得到：
@@ -422,7 +422,7 @@ $$
 &emsp;&emsp; $\frac{\partial Q(\lambda,\bar\lambda)}{\partial b  _  j(k)}=0$ ：同样的处理有：
 
 $$
-\frac{\partial Q\left( \lambda ,\overline{\lambda } \right)}{\partial b_j\left( k \right)}=\sum_{i=1}^N{\frac{1}{\widetilde{p}_i}}\sum_{t=1}^{T_i}{\left( \frac{P\left( i_t=j,o_t=k,O=O_i;\overline{\lambda } \right)}{b_j\left( k \right)}-\frac{P\left( i_t=j,o_t=k,O=O_i;\overline{\lambda } \right)}{b_j\left( V \right)} \right)}
+\frac{\partial Q\left( \lambda ,\overline{\lambda } \right)}{\partial b_j\left( k \right)}=\sum_{i=1}^N{\frac{1}{\widetilde{p}_i} }\sum_{t=1}^{T_i}{\left( \frac{P\left( i_t=j,o_t=k,O=O_i;\overline{\lambda } \right)}{b_j\left( k \right)}-\frac{P\left( i_t=j,o_t=k,O=O_i;\overline{\lambda } \right)}{b_j\left( V \right)} \right)}
 $$
 
 得到：
@@ -517,7 +517,7 @@ $$
 &emsp;&emsp;定义在时刻 $t$ 状态为 $i$ 的所有单个路径 $({i}  _  1,{i}  _  2,\cdots,{i}  _  t)$ 中概率最大值为：
 
 $$
-\delta_t(i)=\max_{i_1,i_2,\cdots,i_{t-1}} P(i_t=i,i_{t-1},\cdots,i_1,o_t,\cdots,o_1;\lambda),\quad i=1,2,\cdots,Q
+\delta_t(i)=\max_{i_1,i_2,\cdots,i_{t-1} } P(i_t=i,i_{t-1},\cdots,i_1,o_t,\cdots,o_1;\lambda),\quad i=1,2,\cdots,Q
 $$
 
 > 它就是算法导论中《动态规划》一章提到的“最优子结构”
@@ -525,7 +525,7 @@ $$
 则根据定义，得到变量 $\delta$ 的递推公式：
 
 $$
-\delta_{t+1}(i)=\max_{i_1,i_2,\cdots,i_{t}} P(i_{t+1}=i,i_{t},\cdots,i_1,o_{t+1},\cdots,o_1;\lambda)=\max_{1 \le j \le Q} \delta_t(j)\times a_{j,i}\times b_i(o_{t+1})\ i=1,2,\cdots,Q;t=1,2,\cdots,T-1
+\delta_{t+1}(i)=\max_{i_1,i_2,\cdots,i_{t} } P(i_{t+1}=i,i_{t},\cdots,i_1,o_{t+1},\cdots,o_1;\lambda)=\max_{1 \le j \le Q} \delta_t(j)\times a_{j,i}\times b_i(o_{t+1})\ i=1,2,\cdots,Q;t=1,2,\cdots,T-1
 $$
 
 &emsp;&emsp;定义在时刻 $t$ 状态为 $i$ 的所有单个路径中概率最大的路径的第 $t-1$ 个结点为：
