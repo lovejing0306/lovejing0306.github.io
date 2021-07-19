@@ -362,7 +362,7 @@ $$
 &emsp;&emsp; $M$ 步：求 $Q$ 函数的极大值：
 
 $$
-\bar\lambda^{ \< new \> }\leftarrow \arg\max_{\lambda} Q(\lambda,\bar\lambda)
+\bar\lambda^{ \ < new \ > }\leftarrow \arg\max_{\lambda} Q(\lambda,\bar\lambda)
 $$
 
 极大化参数在 $Q$ 函数中单独的出现在3个项中，所以只需要对各项分别极大化。
