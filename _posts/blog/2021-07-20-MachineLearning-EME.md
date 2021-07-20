@@ -549,12 +549,12 @@ $$
 算法步骤：
 1. 选定初始点 $w^{ \ < 0 \ > }$ ，取 $\mathbf B  _  0$ 为正定对阵矩阵，迭代计数器 $k=0$ 。
 2. 计算 $g  _  k=g(w^{ \ < k \ > })$ ：
-    1. 若 $ \ | g  _  k \ | \lt \varepsilon$ ，停止计算，得到 $w^{ \ * }=w^{ \ < k \ > }$ 
-    2. 若 $ \ | g  _  k \ | \ge \varepsilon$ ：
+    1. 若 $ \| g  _  k \| \lt \varepsilon$ ，停止计算，得到 $w^{ \ * }=w^{ \ < k \ > }$ 
+    2. 若 $ \| g  _  k \| \ge \varepsilon$ ：
         1. 由 $\mathbf B  _  k p  _  k=-g  _  k$ 求得 $p  _  k$ 
         2. 一维搜索：求出 $\lambda  _  k:\lambda  _  k=\arg\min  _  {\lambda \ge 0}F(w^{ \ < k \ > }+\lambda  _  k p  _  k)$ 
         3. 置 $w^{ \ < k+1 \ > }=w^{ \ < k \ > }+\lambda  _  k p  _  k$ 
-        4. 计算 $g  _  {k+1}=g(w^{ \ < k+1 \ > })$ 。 若 $ \ | g  _  {k+1} \ | \lt \varepsilon$ ，停止计算，得到 $w^{ \ * }=w^{ \ < k+1 \ > }$ 。
+        4. 计算 $g  _  {k+1}=g(w^{ \ < k+1 \ > })$ 。 若 $ \| g  _  {k+1} \| \lt \varepsilon$ ，停止计算，得到 $w^{ \ * }=w^{ \ < k+1 \ > }$ 。
         5. 否则计算 $\mathbf B  _  {k+1}$ ：
             $$
             \mathbf B_{k+1}=\mathbf B_k+\frac{y_k y_k^{T}}{y_k^{T} \delta_k}-\frac{\mathbf B_k \delta_k \delta_k^{T}\mathbf B_k}{\delta_k^{T}\mathbf B_k \delta_k}
