@@ -110,7 +110,7 @@ $$
 
 <center>
     <img 
-    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/evaluation/P _ R _ AB.jpeg?raw=true"
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/evaluation/P_R_AB.jpeg?raw=true"
     width="560" height=""
     >
     <br>

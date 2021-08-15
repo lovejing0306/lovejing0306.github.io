@@ -28,8 +28,6 @@ $$
 
 &emsp;&emsp;给定一个学习任务，为了取得较好的泛化性能，则需使偏差较小且方差较小。一般来说，偏差与方差是有冲突的，称为偏差-方差窘境（bias-variance dilemma），如下图所示：
 
-![bias_var](http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/model_selection/bias_var.png)
-
 <center>
     <img 
     src="http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/model_selection/bias_var.png"
@@ -39,7 +37,7 @@ $$
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> PR </div>
+    padding: 2px;"> BV </div>
 </center>
 
 1. 在训练不足时，模型的拟合能力不够强，训练数据的扰动不足以使模型产生显著变化，此时偏差主导了泛化误差。
