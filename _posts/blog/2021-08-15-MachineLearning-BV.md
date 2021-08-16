@@ -30,7 +30,7 @@ $$
 
 <center>
     <img 
-    src="http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/imgs/model_selection/bias_var.png"
+    src="https://github.com/lovejing0306/Images/blob/master/MachineLearning/evaluation/bias_var.png?raw=true"
     width="512" height=""
     >
     <br>
